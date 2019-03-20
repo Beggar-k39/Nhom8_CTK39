@@ -167,6 +167,10 @@
     <Content Include="Content\Front_End\images\te3.jpg" />
     <Content Include="Content\Front_End\images\who.jpg" />
     <Content Include="Content\Front_End\index.html" />
+    <Content Include="Content\Front_End\my_images\dalat1.jpg" />
+    <Content Include="Content\Front_End\my_images\dalat2.jpg" />
+    <Content Include="Content\Front_End\my_images\dalat3.jpg" />
+    <Content Include="Content\Front_End\my_images\logo_DLU.png" />
     <Content Include="Content\Front_End\w3layouts-License.txt" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
