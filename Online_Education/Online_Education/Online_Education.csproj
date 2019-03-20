@@ -139,6 +139,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Front_End\css\bootstrap.css" />
     <Content Include="Content\Front_End\css\css_slider.css" />
+    <Content Include="Content\Front_End\css\custom_css.css" />
     <Content Include="Content\Front_End\css\font-awesome.min.css" />
     <Content Include="Content\Front_End\css\style.css" />
     <Content Include="Content\Front_End\fonts\fontawesome-webfont.svg" />
@@ -167,6 +168,7 @@
     <Content Include="Content\Front_End\images\te3.jpg" />
     <Content Include="Content\Front_End\images\who.jpg" />
     <Content Include="Content\Front_End\index.html" />
+    <Content Include="Content\Front_End\js\custom_js.js" />
     <Content Include="Content\Front_End\my_images\dalat1.jpg" />
     <Content Include="Content\Front_End\my_images\dalat2.jpg" />
     <Content Include="Content\Front_End\my_images\dalat3.jpg" />
