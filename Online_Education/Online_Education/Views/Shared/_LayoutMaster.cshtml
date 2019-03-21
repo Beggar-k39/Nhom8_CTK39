@@ -148,45 +148,12 @@
     <!-- // Short nav-->
     <!-- banner -->
     <div class="banner_w3lspvt">
-        <div class="csslider infinity" id="slider1">
-            <input type="radio" name="slides" checked="checked" id="slides_1" />
-            <input type="radio" name="slides" id="slides_2" />
-            <input type="radio" name="slides" id="slides_3" />
-            <ul class="banner banner1">
-                <li class="banner-top1">
-                    <div class="container">
-                        <div class="banner-info_w3ls invisible">
-                            <h5 class="text-li">Your Education, Your Way! </h5>
-                            <h3 class="text-wh font-weight-bold mt-2 mb-5">Best Online <br>Learning System </h3>
-                            <p> Get started with online education </p>
-                        </div>
-                    </div>
-                </li>
-                <li class="banner banner2">
-                    <div class="container">
-                        <div class="banner-info_w3ls invisible">
-                            <h5 class="text-li">Your Education, Your Way! </h5>
-                            <h3 class="text-wh font-weight-bold mt-2 mb-5">Best Online <br>Learning System </h3>
-                            <p> Get started with online education </p>
-                        </div>
-                    </div>
-                </li>
-                <li class="banner banner3">
-                    <div class="container">
-                        <div class="banner-info_w3ls invisible">
-                            <h5 class="text-li">Your Education, Your Way! </h5>
-                            <h3 class="text-wh font-weight-bold mt-2 mb-5">Best Online <br>Learning System </h3>
-                            <p> Get started with online education </p>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-            <div class="navigation">
-                <div>
-                    <label for="slides_1"></label>
-                    <label for="slides_2"></label>
-                    <label for="slides_3"></label>
-                </div>
+        <div class="nivo">
+            <div id="slider" class="nivoSlider">
+                <img src="~/Content/Front_End/my_images/truong4.jpg" class="img-fluid" />
+                <img src="~/Content/Front_End/my_images/truong2.jpg" class="img-fluid" />
+                <img src="~/Content/Front_End/my_images/truong3.jpg" class="img-fluid" />
+
             </div>
         </div>
     </div>
@@ -778,5 +745,21 @@
     <!-- //move top icon -->
     <!--Script Custom Group 8-->
     <script src="~/Content/Front_End/js/custom_js.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <link href="~/Content/nivo-slider/nivo-slider.css" rel="stylesheet" />
+    <script src="~/Content/nivo-slider/jquery.nivo.slider.pack.js"></script>
+    <script type="text/javascript">
+        $(window).on('load', function () {
+            $('#slider').nivoSlider(
+                {
+                    controlNav: false,
+                    directionNav: false,
+                    pauseTime: 3000,
+                    pauseOnHover: false,
+                });
+        });
+    </script>
+
+    <!-- // End Script Custom Group 8-->
 </body>
 </html>

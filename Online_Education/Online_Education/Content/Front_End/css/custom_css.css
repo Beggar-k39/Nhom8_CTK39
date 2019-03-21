@@ -93,3 +93,8 @@
 .sticky-left li a .fa-fb:before {
     padding: 10px;
 }
+#slider{
+}
+#slider img {
+    object-fit: cover;
+}
