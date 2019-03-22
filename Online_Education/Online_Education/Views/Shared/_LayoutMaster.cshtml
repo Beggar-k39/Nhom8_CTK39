@@ -59,15 +59,15 @@
                     <label for="drop" class="toggle">Menu</label>
                     <input type="checkbox" id="drop" />
                     <ul class="menu mx-lg-auto">
-                        <li><a href="@Url.Content("~/Home/Index")" class="active text-wh">Trang chủ</a></li>
-                        <li><a href="@Url.Action("Introduce","Home")">Giới thiệu</a></li>
-                        <li><a href="@Url.Action("Professiors","Home")">Giảng viên</a></li>
+                        <li><a id="Index1" href="@Url.Content("~/Home/Index")">Trang chủ</a></li>
+                        <li><a id="Introduce1" href="@Url.Action("Introduce","Home")">Giới thiệu</a></li>
+                        <li><a id="Professiors1"  href="@Url.Action("Professiors","Home")">Giảng viên</a></li>
                         <li>
                             <!-- First Tier Drop Down -->
                             <label for="drop-2" class="toggle toogle-2">
                                 Pages <span class="fa fa-angle-down" aria-hidden="true"></span>
                             </label>
-                            <a href="@Url.Action("Course","Home")">Khóa học <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                            <a id="Course1" href="@Url.Action("Course","Home")">Khóa học <span class="fa fa-angle-down" aria-hidden="true"></span></a>
                             <input type="checkbox" id="drop-2" />
                             <ul style="background-color:#228b22c9">
                                 <li><a href="#professors" class="drop-text">JavaScipt</a></li>
@@ -76,8 +76,8 @@
                                 <li><a href="#testi" class="drop-text">React</a></li>
                             </ul>
                         </li>
-                        <li><a href="@Url.Action("Gallery","Home")">Ảnh</a></li>
-                        <li><a href="@Url.Action("Contact","Home")">Liên hệ</a></li>
+                        <li><a id="Gallery1" href="@Url.Action("Gallery","Home")">Ảnh</a></li>
+                        <li><a id="Contact1" href="@Url.Action("Contact","Home")">Liên hệ</a></li>
                     </ul>
                 </nav>
             </div>
@@ -110,15 +110,15 @@
                     <label for="drop" class="toggle">Menu</label>
                     <input type="checkbox" id="drop" />
                     <ul class="menu mx-lg-auto">
-                        <li><a href="@Url.Content("~/Home/Index")" class="active">Trang chủ</a></li>
-                        <li><a href="@Url.Action("Introduce","Home")">Giới thiệu</a></li>
-                        <li><a href="@Url.Action("Professiors","Home")">Giảng viên</a></li>
+                        <li><a id="Index" href="@Url.Content("~/Home/Index")">Trang chủ</a></li>
+                        <li><a id="Introduce" href="@Url.Action("Introduce","Home")">Giới thiệu</a></li>
+                        <li><a id="Professiors" href="@Url.Action("Professiors","Home")">Giảng viên</a></li>
                         <li>
                             <!-- First Tier Drop Down -->
                             <label for="drop-2" class="toggle toogle-2">
                                 Pages <span class="fa fa-angle-down" aria-hidden="true"></span>
                             </label>
-                            <a href="@Url.Action("Course","Home")">Khóa học <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                            <a id="Course" href="@Url.Action("Course","Home")">Khóa học <span class="fa fa-angle-down" aria-hidden="true"></span></a>
                             <input type="checkbox" id="drop-2" />
                             <ul style="background-color:#228b22c9">
                                 <li><a href="#professors" class="drop-text">JavaScipt</a></li>
@@ -127,8 +127,8 @@
                                 <li><a href="#testi" class="drop-text">React</a></li>
                             </ul>
                         </li>
-                        <li><a href="@Url.Action("Gallery","Home")">Ảnh</a></li>
-                        <li><a href="@Url.Action("Contact","Home")">Liên hệ</a></li>
+                        <li><a id="Gallery" href="@Url.Action("Gallery","Home")">Ảnh</a></li>
+                        <li><a id="Contact" href="@Url.Action("Contact","Home")">Liên hệ</a></li>
                     </ul>
                 </nav>
             </div>
@@ -145,6 +145,9 @@
             <!-- //dwn -->
         </div>
     </div>
+    <!-- Body -->
+    @RenderBody()
+    <!-- //Body-->
     <!-- // Short nav-->
     <!-- banner -->
     @RenderSection("NivoSlider", false)
@@ -386,6 +389,15 @@
                     pauseTime: 3000,
                     pauseOnHover: false,
                 });
+            
+            //alert($('#title').text());
+            // Active Menu
+            var x = $('#title').text();
+            var str = "#" + x;
+            var str1 = str + "1";
+            $(str).addClass('text-wh');
+            $(str1).addClass('text-wh');
+            // End Active Menu
         });
     </script>
 
