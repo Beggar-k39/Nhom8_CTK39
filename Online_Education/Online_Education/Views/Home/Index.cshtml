@@ -3,6 +3,71 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutMaster.cshtml";
 }
+@section NivoSlider{
+    <div class="banner_w3lspvt">
+        <div class="nivo">
+            <div id="slider" class="nivoSlider">
+                <img src="~/Content/Front_End/my_images/truong4.jpg" class="img-fluid" />
+                <img src="~/Content/Front_End/my_images/truong2.jpg" class="img-fluid" />
+                <img src="~/Content/Front_End/my_images/truong3.jpg" class="img-fluid" />
+
+            </div>
+        </div>
+    </div>
+}
+@section bottom_grids{
+    <section class="about-bottom" id="services">
+        <div class="container pb-lg-4">
+            <div class="row bg-colors text-center">
+                <div class="col-md-4 service-subgrids">
+                    <div class="w3ls-about-grid py-lg-5 py-md-4 py-5 px-3">
+                        <h4 class="text-wh font-weight-bold mb-3">Hội thảo nhóm</h4>
+                        <p class="text-li">Được tham gia hội thảo cùng giảng viên và tạo lập nhóm</p>
+                    </div>
+                    <span class="fa fa-users" aria-hidden="true"></span>
+                </div>
+                <div class="col-md-4 service-subgrids bg-li">
+                    <div class="w3ls-about-grid py-lg-5 py-md-4 py-5 px-3">
+                        <h4 class="text-bl font-weight-bold mb-3">Đối tượng</h4>
+                        <p class="text-secondary"> Các khóa học hướng đến các đối tượng sinh viên, học sinh</p>
+                    </div>
+                    <span class="fa fa-linode" aria-hidden="true"></span>
+                </div>
+                <div class="col-md-4 service-subgrids">
+                    <div class="w3ls-about-grid py-lg-5 py-md-4 py-5 px-3">
+                        <h4 class="text-wh font-weight-bold mb-3">Tài nguyên lớn</h4>
+                        <p class="text-li">Học viên được cung cấp đầy đủ tài liệu để nghiên cứu</p>
+                    </div>
+                    <span class="fa fa-book" aria-hidden="true"></span>
+                </div>
+            </div>
+            <div class="row bg-colors text-center">
+                <div class="col-md-4 service-subgrids bg-li">
+                    <div class="w3ls-about-grid py-lg-5 py-md-4 py-5 px-3">
+                        <h4 class="text-bl font-weight-bold mb-3">Đăng kí trực tuyến</h4>
+                        <p class="text-secondary">Cho phép học viên đăng kí khóa học trực tuyến</p>
+                    </div>
+                    <span class="fa fa-laptop" aria-hidden="true"></span>
+                </div>
+                <div class="col-md-4 service-subgrids">
+                    <div class="w3ls-about-grid py-lg-5 py-md-4 py-5 px-3">
+                        <h4 class="text-wh font-weight-bold mb-3">Giảng viên chuyên nghiệp</h4>
+                        <p class="text-li">Được đào tạo bài bản và giàu kinh nghiệm</p>
+                    </div>
+                    <span class="fa fa-thumbs-o-up" aria-hidden="true"></span>
+                </div>
+                <div class="col-md-4 service-subgrids bg-li">
+                    <div class="w3ls-about-grid py-lg-5 py-md-4 py-5 px-3">
+                        <h4 class="text-bl font-weight-bold mb-3">Chương trình học mới</h4>
+                        <p class="text-secondary">Chương trình học luôn được cập nhật để phù hợp với xu hướng</p>
+                    </div>
+                    <span class="fa fa-magic" aria-hidden="true"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+<!-- Khóa học-->
 <section class="blog py-5" id="blog">
     <div class="container py-xl-5 py-lg-3">
         <h3 class="text-bl text-center font-weight-bold mb-2">Khóa học phổ biến</h3>
@@ -102,4 +167,4 @@
         </div>
     </div>
 </section>
-
+<!-- //Khóa học-->

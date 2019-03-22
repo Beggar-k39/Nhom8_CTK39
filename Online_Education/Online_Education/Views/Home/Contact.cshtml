@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+
+<h2>Contact</h2>
+@section contact{
+    <section class="contact pb-5" id="contact">
+        <div class="container pb-xl-5 pb-lg-3">
+            <h3 class="text-bl text-center font-weight-bold mb-2">Liên hệ</h3>
+            <h6 class="text-colors text-center let-spa mb-5">Góp ý</h6>
+            <div class="row mx-sm-0 mx-2">
+                <!-- map -->
+                <div class="col-lg-6 map" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1641.1286659909717!2d108.44278770530694!3d11.954844184315155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317112d959f88991%3A0x9c66baf1767356fa!2zVHLGsOG7nW5nIMSQ4bqhaSBI4buNYyDEkMOgIEzhuqF0!5e0!3m2!1svi!2s!4v1553053694689" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+                <!-- //map -->
+                <!-- contact form -->
+                <div class="col-lg-6 main_grid_contact" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+                    <div class="form-w3ls p-md-5 p-4">
+                        <h4 class="mb-4 sec-title-w3 let-spa text-bl">Góp ý</h4>
+                        <form action="#" method="post">
+                            <div class="row">
+                                <div class="col-sm-6 form-group pr-sm-1">
+                                    <input class="form-control" type="text" name="Name" placeholder="Họ và tên" required="">
+                                </div>
+                                <div class="col-sm-6 form-group pl-sm-1">
+                                    <input class="form-control" type="email" name="Email" placeholder="Địa chỉ email" required="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="Subject" placeholder="Chủ đề" required="">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="Phone Number" placeholder="Số điện thoại" required="">
+                            </div>
+                            <div class="form-group">
+                                <textarea name="message" placeholder="Nội dung" required=""></textarea>
+                            </div>
+                            <div class="input-group1 text-right">
+                                <button class="btn" type="submit">Gửi ngay</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- //contact form -->
+            </div>
+        </div>
+    </section>
+}

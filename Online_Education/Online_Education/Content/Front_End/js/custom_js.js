@@ -20,7 +20,7 @@
             status = true;
         }
 
-        if (y > 1200) {
+        if (y > 200) {
             if (status1) {
                 stickyleft.classList.add('sticky-left-show');
                 status1 = false;

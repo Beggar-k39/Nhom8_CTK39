@@ -48,7 +48,7 @@
         <div class="container d-lg-flex">
             <!-- logo -->
             <h1 class="logo-style-res float-left">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="@Url.Action("Index","Home")">
                     <img src="~/Content/Front_End/my_images/logo_DLU.png" alt="" class="img-fluid logo-img" style="height:93px">
                 </a>
             </h1>
@@ -60,24 +60,24 @@
                     <input type="checkbox" id="drop" />
                     <ul class="menu mx-lg-auto">
                         <li><a href="@Url.Content("~/Home/Index")" class="active text-wh">Trang chủ</a></li>
-                        <li><a href="#chuyengia">Giảng viên</a></li>
+                        <li><a href="@Url.Action("Introduce","Home")">Giới thiệu</a></li>
+                        <li><a href="@Url.Action("Professiors","Home")">Giảng viên</a></li>
                         <li>
                             <!-- First Tier Drop Down -->
                             <label for="drop-2" class="toggle toogle-2">
                                 Pages <span class="fa fa-angle-down" aria-hidden="true"></span>
                             </label>
-                            <a href="#">Khóa học <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                            <a href="@Url.Action("Course","Home")">Khóa học <span class="fa fa-angle-down" aria-hidden="true"></span></a>
                             <input type="checkbox" id="drop-2" />
                             <ul style="background-color:#228b22c9">
-                                <li><a href="#services" class="drop-text">Services</a></li>
-                                <li><a href="#professors" class="drop-text">Professors</a></li>
-                                <li><a href="#blog" class="drop-text">Blog</a></li>
-                                <li><a href="#who" class="drop-text">Who We Are</a></li>
-                                <li><a href="#testi" class="drop-text">Testimonials</a></li>
+                                <li><a href="#professors" class="drop-text">JavaScipt</a></li>
+                                <li><a href="#blog" class="drop-text">CSharp</a></li>
+                                <li><a href="#who" class="drop-text">HTML</a></li>
+                                <li><a href="#testi" class="drop-text">React</a></li>
                             </ul>
                         </li>
-                        <li><a href="#gallery">Ảnh</a></li>
-                        <li><a href="#contact">Liên hệ</a></li>
+                        <li><a href="@Url.Action("Gallery","Home")">Ảnh</a></li>
+                        <li><a href="@Url.Action("Contact","Home")">Liên hệ</a></li>
                     </ul>
                 </nav>
             </div>
@@ -110,25 +110,25 @@
                     <label for="drop" class="toggle">Menu</label>
                     <input type="checkbox" id="drop" />
                     <ul class="menu mx-lg-auto">
-                        <li><a href="index.html" class="active">Trang chủ</a></li>
-                        <li><a href="#chuyengia">Giảng viên</a></li>
+                        <li><a href="@Url.Content("~/Home/Index")" class="active">Trang chủ</a></li>
+                        <li><a href="@Url.Action("Introduce","Home")">Giới thiệu</a></li>
+                        <li><a href="@Url.Action("Professiors","Home")">Giảng viên</a></li>
                         <li>
                             <!-- First Tier Drop Down -->
                             <label for="drop-2" class="toggle toogle-2">
                                 Pages <span class="fa fa-angle-down" aria-hidden="true"></span>
                             </label>
-                            <a href="#">Khóa học <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                            <a href="@Url.Action("Course","Home")">Khóa học <span class="fa fa-angle-down" aria-hidden="true"></span></a>
                             <input type="checkbox" id="drop-2" />
                             <ul style="background-color:#228b22c9">
-                                <li><a href="#services" class="drop-text">Services</a></li>
-                                <li><a href="#professors" class="drop-text">Professors</a></li>
-                                <li><a href="#blog" class="drop-text">Blog</a></li>
-                                <li><a href="#who" class="drop-text">Who We Are</a></li>
-                                <li><a href="#testi" class="drop-text">Testimonials</a></li>
+                                <li><a href="#professors" class="drop-text">JavaScipt</a></li>
+                                <li><a href="#blog" class="drop-text">CSharp</a></li>
+                                <li><a href="#who" class="drop-text">HTML</a></li>
+                                <li><a href="#testi" class="drop-text">React</a></li>
                             </ul>
                         </li>
-                        <li><a href="#gallery">Ảnh</a></li>
-                        <li><a href="#contact">Liên hệ</a></li>
+                        <li><a href="@Url.Action("Gallery","Home")">Ảnh</a></li>
+                        <li><a href="@Url.Action("Contact","Home")">Liên hệ</a></li>
                     </ul>
                 </nav>
             </div>
@@ -147,436 +147,65 @@
     </div>
     <!-- // Short nav-->
     <!-- banner -->
-    <div class="banner_w3lspvt">
-        <div class="nivo">
-            <div id="slider" class="nivoSlider">
-                <img src="~/Content/Front_End/my_images/truong4.jpg" class="img-fluid" />
-                <img src="~/Content/Front_End/my_images/truong2.jpg" class="img-fluid" />
-                <img src="~/Content/Front_End/my_images/truong3.jpg" class="img-fluid" />
-
-            </div>
-        </div>
-    </div>
+    @RenderSection("NivoSlider", false)
     <!-- //banner -->
     <!-- banner bottom grids -->
-    <section class="about-bottom" id="services">
-        <div class="container pb-lg-4">
-            <div class="row bg-colors text-center">
-                <div class="col-md-4 service-subgrids">
-                    <div class="w3ls-about-grid py-lg-5 py-md-4 py-5 px-3">
-                        <h4 class="text-wh font-weight-bold mb-3">Hội thảo nhóm</h4>
-                        <p class="text-li">Được tham gia hội thảo cùng giảng viên và tạo lập nhóm</p>
-                    </div>
-                    <span class="fa fa-users" aria-hidden="true"></span>
-                </div>
-                <div class="col-md-4 service-subgrids bg-li">
-                    <div class="w3ls-about-grid py-lg-5 py-md-4 py-5 px-3">
-                        <h4 class="text-bl font-weight-bold mb-3">Đối tượng</h4>
-                        <p class="text-secondary"> Các khóa học hướng đến các đối tượng sinh viên, học sinh</p>
-                    </div>
-                    <span class="fa fa-linode" aria-hidden="true"></span>
-                </div>
-                <div class="col-md-4 service-subgrids">
-                    <div class="w3ls-about-grid py-lg-5 py-md-4 py-5 px-3">
-                        <h4 class="text-wh font-weight-bold mb-3">Tài nguyên lớn</h4>
-                        <p class="text-li">Học viên được cung cấp đầy đủ tài liệu để nghiên cứu</p>
-                    </div>
-                    <span class="fa fa-book" aria-hidden="true"></span>
-                </div>
-            </div>
-            <div class="row bg-colors text-center">
-                <div class="col-md-4 service-subgrids bg-li">
-                    <div class="w3ls-about-grid py-lg-5 py-md-4 py-5 px-3">
-                        <h4 class="text-bl font-weight-bold mb-3">Đăng kí trực tuyến</h4>
-                        <p class="text-secondary">Cho phép học viên đăng kí khóa học trực tuyến</p>
-                    </div>
-                    <span class="fa fa-laptop" aria-hidden="true"></span>
-                </div>
-                <div class="col-md-4 service-subgrids">
-                    <div class="w3ls-about-grid py-lg-5 py-md-4 py-5 px-3">
-                        <h4 class="text-wh font-weight-bold mb-3">Giảng viên chuyên nghiệp</h4>
-                        <p class="text-li">Được đào tạo bài bản và giàu kinh nghiệm</p>
-                    </div>
-                    <span class="fa fa-thumbs-o-up" aria-hidden="true"></span>
-                </div>
-                <div class="col-md-4 service-subgrids bg-li">
-                    <div class="w3ls-about-grid py-lg-5 py-md-4 py-5 px-3">
-                        <h4 class="text-bl font-weight-bold mb-3">Chương trình học mới</h4>
-                        <p class="text-secondary">Chương trình học luôn được cập nhật để phù hợp với xu hướng</p>
-                    </div>
-                    <span class="fa fa-magic" aria-hidden="true"></span>
-                </div>
-            </div>
-        </div>
-    </section>
+    @RenderSection("bottom_grids", false)
+
     <!-- //banner bottom grids -->
-    <!-- blog -->
-    @RenderBody()
-    <!-- //blog -->
-    <hr />
+    <!-- Course -->
+    @RenderSection("course", false)
+    <!-- //Course -->
     <!-- about -->
-    <section class="w3ls-bnrbtm py-5" id="evironment">
-        <div class="container py-xl-5 py-lg-3">
-            <div class="row">
-                <div class="col-lg-6 pr-xl-5">
-                    <h5 class="text-colors let-spa">Môi trường học tập</h5>
-                    <h3 class="text-bl font-weight-bold mt-3 mb-5">Môi trường học tập chuyên nghiệp<br>tự do kiểm soát thời gian</h3>
-                    <h4 class="text-colors let-spa">Cơ sở vật chất hiện đại</h4>
-                </div>
-                <div class="col-lg-6 pl-xl-5 mt-lg-0 mt-4">
-                    <p>
-                        Không gian học tập rộng lớn với quy mô phát triển và hỗ trợ đáp ứng tất cả nhu cầu thực tập của sinh viên
-                    </p>
-                    <p class="pt-4 mt-4 border-top">
-                        Đội ngũ giảng viên luôn luôn có mặt hỗ trợ thông tin trực tuyến cho sinh viên 24/7
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+    @RenderSection("about", false)
+
     <!-- //about -->
     <!-- gallery -->
-    <div class="gallery py-5" id="gallery">
-        <div class="container py-xl-5 py-lg-3">
-            <h3 class="text-bl text-center font-weight-bold mb-2">Thư viện ảnh</h3>
-            <h6 class="text-colors text-center let-spa mb-5">Hơn thế nữa</h6>
-            <div class="row no-gutters">
-                <div class="col-md-4 gallery-grid1">
-                    <a href="#gal1">
-                        <img src="~/Content/Front_End/images/g1.jpg" alt=" " class="img-fluid" />
-                    </a>
-                </div>
-                <div class="col-md-4 gallery-grid1">
-                    <a href="#gal2">
-                        <img src="~/Content/Front_End/images/g2.jpg" alt=" " class="img-fluid" />
-                    </a>
-                </div>
-                <div class="col-md-4 gallery-grid1">
-                    <a href="#gal3">
-                        <img src="~/Content/Front_End/images/g3.jpg" alt=" " class="img-fluid" />
-                    </a>
-                </div>
-            </div>
-            <div class="row no-gutters">
-                <div class="col-md-4 gallery-grid1">
-                    <a href="#gal4">
-                        <img src="~/Content/Front_End/images/g4.jpg" alt=" " class="img-fluid" />
-                    </a>
-                </div>
-                <div class="col-md-4 gallery-grid1">
-                    <a href="#gal5">
-                        <img src="~/Content/Front_End/images/g5.jpg" alt=" " class="img-fluid" />
-                    </a>
-                </div>
-                <div class="col-md-4 gallery-grid1">
-                    <a href="#gal6">
-                        <img src="~/Content/Front_End/images/g6.jpg" alt=" " class="img-fluid" />
-                    </a>
-                </div>
-            </div>
-        </div>
-        <!-- gallery popups -->
-        <!-- popup-->
-        <div id="gal1" class="pop-overlay animate">
-            <div class="popup">
-                <img src="~/Content/Front_End/images/g1.jpg" alt="Popup Image" class="img-fluid" />
-                <p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>
-                <a class="close" href="#gallery">&times;</a>
-            </div>
-        </div>
-        <!-- //popup -->
-        <!-- popup-->
-        <div id="gal2" class="pop-overlay animate">
-            <div class="popup">
-                <img src="~/Content/Front_End/images/g2.jpg" alt="Popup Image" class="img-fluid" />
-                <p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>
-                <a class="close" href="#gallery">&times;</a>
-            </div>
-        </div>
-        <!-- //popup -->
-        <!-- popup-->
-        <div id="gal3" class="pop-overlay animate">
-            <div class="popup">
-                <img src="~/Content/Front_End/images/g3.jpg" alt="Popup Image" class="img-fluid" />
-                <p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>
-                <a class="close" href="#gallery">&times;</a>
-            </div>
-        </div>
-        <!-- //popup3 -->
-        <!-- popup-->
-        <div id="gal4" class="pop-overlay animate">
-            <div class="popup">
-                <img src="~/Content/Front_End/images/g4.jpg" alt="Popup Image" class="img-fluid" />
-                <p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>
-                <a class="close" href="#gallery">&times;</a>
-            </div>
-        </div>
-        <!-- //popup -->
-        <!-- popup-->
-        <div id="gal5" class="pop-overlay animate">
-            <div class="popup">
-                <img src="~/Content/Front_End/images/g5.jpg" alt="Popup Image" class="img-fluid" />
-                <p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>
-                <a class="close" href="#gallery">&times;</a>
-            </div>
-        </div>
-        <!-- //popup -->
-        <!-- popup-->
-        <div id="gal6" class="pop-overlay animate">
-            <div class="popup">
-                <img src="~/Content/Front_End/images/g6.jpg" alt="Popup Image" class="img-fluid" />
-                <p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>
-                <a class="close" href="#gallery">&times;</a>
-            </div>
-        </div>
-        <!-- //popup -->
-        <!-- //gallery popups -->
-    </div>
+    @RenderSection("gallery", false)
+
     <!-- //gallery -->
     <!-- professors -->
-    <section class="teams text-center py-5" id="professors">
-        <div class="container py-xl-5 py-lg-3">
-            <h3 class="text-bl font-weight-bold mb-2" id="chuyengia">Các chuyên gia</h3>
-            <h6 class="text-colors let-spa mb-5">Giàu kinh nghiệm</h6>
-            <div class="row inner-sec-w3ls-w3pvt-aminfo pt-sm-4">
-                <div class="col-md-3 col-sm-6 p-0">
-                    <div class="team-grid text-center">
-                        <div class="team-img">
-                            <img class="img-fluid rounded" src="~/Content/Front_End/images/t1.jpg" alt="">
-                        </div>
-                        <div class="team-info">
-                            <h4>Marian Dupre</h4>
-                            <ul class="d-flex justify-content-center py-3 social-icons">
-                                <li class="effect-soc-team1">
-                                    <a href="#">
-                                        <span class="fa fa-facebook-f"></span>
-                                    </a>
-                                </li>
-                                <li class="effect-soc-team2">
-                                    <a href="#">
-                                        <span class="fa fa-twitter"></span>
-                                    </a>
-                                </li>
-                                <li class="effect-soc-team3">
-                                    <a href="#">
-                                        <span class="fa fa-google-plus"></span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 p-0 top-tem">
-                    <div class="team-grid text-center">
-                        <div class="team-img">
-                            <img class="img-fluid rounded" src="~/Content/Front_End/my_images/thai.jpg" alt="">
-                        </div>
-                        <div class="team-info">
-                            <h4>Quốc Thái</h4>
-                            <ul class="d-flex justify-content-center py-3 social-icons">
-                                <li class="effect-soc-team1">
-                                    <a href="https://www.facebook.com/nguyenduong.quocthai">
-                                        <span class="fa fa-facebook-f"></span>
-                                    </a>
-                                </li>
-                                <li class="effect-soc-team2">
-                                    <a href="#">
-                                        <span class="fa fa-twitter"></span>
-                                    </a>
-                                </li>
-                                <li class="effect-soc-team3">
-                                    <a href="#">
-                                        <span class="fa fa-google-plus"></span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 p-0 mt-sm-0 mt-5">
-                    <div class="team-grid text-center">
-                        <div class="team-img">
-                            <img class="img-fluid rounded" src="~/Content/Front_End/images/t3.jpg" alt="">
-                        </div>
-                        <div class="team-info">
-                            <h4>Judy Crouse</h4>
-                            <ul class="d-flex justify-content-center py-3 social-icons">
-                                <li class="effect-soc-team1">
-                                    <a href="#">
-                                        <span class="fa fa-facebook-f"></span>
-                                    </a>
-                                </li>
-                                <li class="effect-soc-team2">
-                                    <a href="#">
-                                        <span class="fa fa-twitter"></span>
-                                    </a>
-                                </li>
-                                <li class="effect-soc-team3">
-                                    <a href="#">
-                                        <span class="fa fa-google-plus"></span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 p-0 top-tem">
-                    <div class="team-grid text-center">
-                        <div class="team-img">
-                            <img class="img-fluid rounded" src="~/Content/Front_End/images/t4.jpg" alt="">
-                        </div>
-                        <div class="team-info">
-                            <h4>Judy Crouse</h4>
-                            <ul class="d-flex justify-content-center py-3 social-icons">
-                                <li class="effect-soc-team1">
-                                    <a href="#">
-                                        <span class="fa fa-facebook-f"></span>
-                                    </a>
-                                </li>
-                                <li class="effect-soc-team2">
-                                    <a href="#">
-                                        <span class="fa fa-twitter"></span>
-                                    </a>
-                                </li>
-                                <li class="effect-soc-team3">
-                                    <a href="#">
-                                        <span class="fa fa-google-plus"></span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    @RenderSection("professiors", false)
+
     <!-- //professors -->
     <!-- who we are -->
-    <section class="w3ls-bnrbtm py-5" id="who">
-        <div class="py-xl-5 py-lg-3">
-            <div class="row no-gutters">
-                <div class="col-xl-6 who-left-w3pvt">
-                    <h6 class="text-colors let-spa">Something</h6>
-                    <h3 class="text-bl font-weight-bold mt-2 mb-3">Đội ngũ giảng viên</h3>
-                    <p>
-                        Là những giảng viên có nhiều kinh nghiệm trong các lĩnh vực lập trình
-                    </p>
-                    <ul class="list-unstyled who-lists mt-4 ml-5">
-                        <li><span class="fa fa-caret-right"></span>Tham gia nhiều dự án lớn</li>
-                        <li class="my-2"><span class="fa fa-caret-right"></span>Có khả năng quản lý nhóm</li>
-                        <li><span class="fa fa-caret-right"></span>Kĩ sư công nghệ thông tin</li>
-                        <li class="mt-2"><span class="fa fa-caret-right"></span>Chịu được áp lực công việc cao</li>
-                    </ul>
-                    <div class="bars-main-info mt-5">
-                        <h3 class="text-bl font-weight-bold mb-4">Kĩ năng chung</h3>
-                        <div class="progress-one two-progress my-3">
-                            <h4 class="progress-tittle">Tiếng Anh</h4>
-                            <div class="progress-effect progress-effect-1">
-                            </div>
-                        </div>
-                        <div class="progress-one two-progress">
-                            <h4 class="progress-tittle">Truyền đạt</h4>
-                            <div class="progress-effect progress-effect-2 w-75">
-                            </div>
-                        </div>
-                        <div class="progress-one two-progress my-3">
-                            <h4 class="progress-tittle">Kinh nghiệm</h4>
-                            <div class="progress-effect progress-effect-3 w-100">
-                            </div>
-                        </div>
-                        <div class="progress-one two-progress my-3">
-                            <h4 class="progress-tittle">Quản trị dự án</h4>
-                            <div class="progress-effect w-50" style="background-color:green">
-                            </div>
-                        </div>
-                        <div class="progress-one two-progress my-3">
-                            <h4 class="progress-tittle">Ví dụ thực tế</h4>
-                            <div class="progress-effect w-100" style="background-color:blueviolet">
-                            </div>
-                        </div>
+    @RenderSection("who", false)
 
-                    </div>
-
-                </div>
-                <div class="col-xl-6 mt-xl-0 mt-5 text-xl-right text-center">
-                    <img class="img-fluid rounded" src="~/Content/Front_End/images/who.jpg" alt="">
-                </div>
-            </div>
-        </div>
-    </section>
     <!-- //who we are -->
     <!-- testimonials -->
-    <section class="clients" id="testi">
-        <div class="row no-gutters pb-4">
-            <div class="col-lg-6 col-md-8 left-test-w3pvt p-sm-5 p-4">
-                <div class="my-4 py-xl-5 py-lg-3">
-                    <div class="feedback-info">
-                        <div class="feedback-top">
-                            <span class="text-white">
-                                - Ăn ngủ và lăn ra code<br />
-                                - Code chán thì đi đá banh <br />
-                                - Đá banh chán thì qua phòng gái <br />
-                            </span>
-                            <h4 class="mt-4 text-wh font-weight-bold mb-4">Văn lành</h4>
+    @*@RenderSection("quote",false)
+        <section class="clients" id="testi">
+            <div class="row no-gutters pb-4">
+                <div class="col-lg-6 col-md-8 left-test-w3pvt p-sm-5 p-4">
+                    <div class="my-4 py-xl-5 py-lg-3">
+                        <div class="feedback-info">
+                            <div class="feedback-top">
+                                <span class="text-white">
+                                    - Ăn ngủ và lăn ra code<br />
+                                    - Code chán thì đi đá banh <br />
+                                    - Đá banh chán thì qua phòng gái <br />
+                                </span>
+                                <h4 class="mt-4 text-wh font-weight-bold mb-4">Văn lành</h4>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-6 col-md-4"></div>
             </div>
-            <div class="col-lg-6 col-md-4"></div>
-        </div>
-    </section>
+        </section>*@
     <!-- //testimonials -->
     <!-- contact -->
+    @RenderSection("contact", false)
     <hr />
-    <section class="contact pb-5" id="contact">
-        <div class="container pb-xl-5 pb-lg-3">
-            <h3 class="text-bl text-center font-weight-bold mb-2">Liên hệ</h3>
-            <h6 class="text-colors text-center let-spa mb-5">Giữ liên lạc</h6>
-            <div class="row mx-sm-0 mx-2">
-                <!-- map -->
-                <div class="col-lg-6 map" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1641.1286659909717!2d108.44278770530694!3d11.954844184315155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317112d959f88991%3A0x9c66baf1767356fa!2zVHLGsOG7nW5nIMSQ4bqhaSBI4buNYyDEkMOgIEzhuqF0!5e0!3m2!1svi!2s!4v1553053694689" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-                </div>
-                <!-- //map -->
-                <!-- contact form -->
-                <div class="col-lg-6 main_grid_contact" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
-                    <div class="form-w3ls p-md-5 p-4">
-                        <h4 class="mb-4 sec-title-w3 let-spa text-bl">Góp ý</h4>
-                        <form action="#" method="post">
-                            <div class="row">
-                                <div class="col-sm-6 form-group pr-sm-1">
-                                    <input class="form-control" type="text" name="Name" placeholder="Họ và tên" required="">
-                                </div>
-                                <div class="col-sm-6 form-group pl-sm-1">
-                                    <input class="form-control" type="email" name="Email" placeholder="Địa chỉ email" required="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control" type="text" name="Subject" placeholder="Chủ đề" required="">
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control" type="text" name="Phone Number" placeholder="Số điện thoại" required="">
-                            </div>
-                            <div class="form-group">
-                                <textarea name="message" placeholder="Nội dung" required=""></textarea>
-                            </div>
-                            <div class="input-group1 text-right">
-                                <button class="btn" type="submit">Gửi ngay</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <!-- //contact form -->
-            </div>
-        </div>
-    </section>
+
     <!-- //contact -->
     <!-- brands -->
+    @RenderSection("brands", false)
     <section class="brands pt-5">
         <div class="container-fluid">
             <div class="row text-center">
                 <div class="col-md-2 col-4 main-brand bg-transparent">
-                    <img src="~/Content/Front_End/my_images/js-logo.png" class="img-fluid logo-img" alt="" />
+                    <a href="#"><img src="~/Content/Front_End/my_images/js-logo.png" class="img-fluid logo-img" alt="" /></a>
                 </div>
                 <div class="col-md-2 col-4 main-brand bg-transparent">
                     @*<span class="fa fa-gg mb-3" aria-hidden="true"></span>*@
@@ -590,7 +219,7 @@
                     <img src="~/Content/Front_End/my_images/bootstrap-logo.png" class="img-fluid logo-img" alt="" />
                 </div>
                 <div class="col-md-2 col-4 main-brand bg-transparent">
-                    <<img src="~/Content/Front_End/my_images/react-logo.png" class="img-fluid logo-img" alt="" />
+                    <img src="~/Content/Front_End/my_images/react-logo.png" class="img-fluid logo-img" alt="" />
                 </div>
                 <div class="col-md-2 col-4 main-brand bg-transparent">
                     <img src="~/Content/Front_End/my_images/nodejs-logo.png" class="img-fluid logo-img" alt="" />
@@ -610,7 +239,7 @@
                             <a href="@Url.Content("~/Home/Index")">Trang chủ</a>
                         </li>
                         <li class="my-2">
-                            <a class="scroll" href="#about">Giảng viên</a>
+                            <a class="scroll" href="">Giới thiệu</a>
                         </li>
                         <li>
                             <a class="scroll" href="#services">Khóa học</a>
