@@ -14,20 +14,24 @@
                 shortmenu.classList.add('short-menu-show');
                 status = false;
             }
-        } else {
-            maintop.classList.remove('menu-hide');
-            shortmenu.classList.remove('short-menu-show');
-            status = true;
+        } else if (y <= 94) {
+            if (!status) {
+                maintop.classList.remove('menu-hide');
+                shortmenu.classList.remove('short-menu-show');
+                status = true;
+            }
         }
 
-        if (y > 1200) {
+        if (y > 200) {
             if (status1) {
                 stickyleft.classList.add('sticky-left-show');
                 status1 = false;
             }
-        } else {
-            stickyleft.classList.remove('sticky-left-show');
-            status1 = true;
+        } else if (y<= 200) {
+            if (!status) {
+                stickyleft.classList.remove('sticky-left-show');
+                status1 = true;
+            }
         }
 
     })

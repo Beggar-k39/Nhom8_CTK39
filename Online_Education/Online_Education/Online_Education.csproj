@@ -167,15 +167,54 @@
     <Content Include="Content\Front_End\index.html" />
     <Content Include="Content\Front_End\js\custom_js.js" />
     <Content Include="Content\Front_End\my_images\asp_net.png" />
+    <Content Include="Content\Front_End\my_images\banner1.jpg" />
+    <Content Include="Content\Front_End\my_images\bootstrap-logo.png" />
+    <Content Include="Content\Front_End\my_images\csharp-logo.png" />
     <Content Include="Content\Front_End\my_images\dalat-bg.jpg" />
-    <Content Include="Content\Front_End\my_images\dalat1.jpg" />
+    <Content Include="Content\Front_End\my_images\dalat-bg1.jpg" />
     <Content Include="Content\Front_End\my_images\dalat2.jpg" />
-    <Content Include="Content\Front_End\my_images\dalat3.jpg" />
+    <Content Include="Content\Front_End\my_images\html-logo.png" />
     <Content Include="Content\Front_End\my_images\java.jpg" />
+    <Content Include="Content\Front_End\my_images\js-logo.png" />
     <Content Include="Content\Front_End\my_images\js.jpg" />
     <Content Include="Content\Front_End\my_images\logo_DLU.png" />
     <Content Include="Content\Front_End\my_images\logo_DLU1.png" />
+    <Content Include="Content\Front_End\my_images\nodejs-logo.png" />
+    <Content Include="Content\Front_End\my_images\react-logo.png" />
+    <Content Include="Content\Front_End\my_images\thai.jpg" />
+    <Content Include="Content\Front_End\my_images\truong1.jpg" />
+    <Content Include="Content\Front_End\my_images\truong2.jpg" />
+    <Content Include="Content\Front_End\my_images\truong3.jpg" />
+    <Content Include="Content\Front_End\my_images\truong4.jpg" />
     <Content Include="Content\Front_End\w3layouts-License.txt" />
+    <Content Include="Content\nivo-slider\demo\images\dev7logo.png" />
+    <Content Include="Content\nivo-slider\demo\images\nemo.jpg" />
+    <Content Include="Content\nivo-slider\demo\images\toystory.jpg" />
+    <Content Include="Content\nivo-slider\demo\images\up.jpg" />
+    <Content Include="Content\nivo-slider\demo\images\walle.jpg" />
+    <Content Include="Content\nivo-slider\demo\scripts\jquery-1.7.1.min.js" />
+    <Content Include="Content\nivo-slider\demo\style.css" />
+    <Content Include="Content\nivo-slider\index.html" />
+    <Content Include="Content\nivo-slider\jquery.nivo.slider.js" />
+    <Content Include="Content\nivo-slider\jquery.nivo.slider.pack.js" />
+    <Content Include="Content\nivo-slider\license.txt" />
+    <Content Include="Content\nivo-slider\nivo-slider.css" />
+    <Content Include="Content\nivo-slider\themes\bar\arrows.png" />
+    <Content Include="Content\nivo-slider\themes\bar\bar.css" />
+    <Content Include="Content\nivo-slider\themes\bar\bullets.png" />
+    <Content Include="Content\nivo-slider\themes\bar\loading.gif" />
+    <Content Include="Content\nivo-slider\themes\dark\arrows.png" />
+    <Content Include="Content\nivo-slider\themes\dark\bullets.png" />
+    <Content Include="Content\nivo-slider\themes\dark\dark.css" />
+    <Content Include="Content\nivo-slider\themes\dark\loading.gif" />
+    <Content Include="Content\nivo-slider\themes\default\arrows.png" />
+    <Content Include="Content\nivo-slider\themes\default\bullets.png" />
+    <Content Include="Content\nivo-slider\themes\default\default.css" />
+    <Content Include="Content\nivo-slider\themes\default\loading.gif" />
+    <Content Include="Content\nivo-slider\themes\light\arrows.png" />
+    <Content Include="Content\nivo-slider\themes\light\bullets.png" />
+    <Content Include="Content\nivo-slider\themes\light\light.css" />
+    <Content Include="Content\nivo-slider\themes\light\loading.gif" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -184,6 +223,7 @@
     <Content Include="Content\Front_End\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\Front_End\fonts\fontawesome-webfont.woff2" />
     <Content Include="Content\Front_End\fonts\FontAwesome.otf" />
+<<<<<<< HEAD
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -206,6 +246,14 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+=======
+    <Content Include="Content\nivo-slider\.DS_Store" />
+    <Content Include="Content\nivo-slider\demo\.DS_Store" />
+    <Content Include="Content\nivo-slider\demo\images\.DS_Store" />
+    <Content Include="Content\nivo-slider\README" />
+    <Content Include="Content\nivo-slider\themes\.DS_Store" />
+    <Content Include="Content\nivo-slider\themes\dark\.DS_Store" />
+>>>>>>> b4c8750907eb4398d8b1dd8f2d5e6114c29f84a3
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -238,6 +286,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_LayoutMaster.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+<<<<<<< HEAD
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper-utils.min.js.map" />
@@ -247,6 +296,13 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+=======
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Gallery.cshtml" />
+    <Content Include="Views\Home\Professiors.cshtml" />
+    <Content Include="Views\Home\Introduce.cshtml" />
+    <Content Include="Views\Home\Course.cshtml" />
+>>>>>>> b4c8750907eb4398d8b1dd8f2d5e6114c29f84a3
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

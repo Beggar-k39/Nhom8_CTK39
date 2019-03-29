@@ -12,5 +12,25 @@ namespace Online_Education.Controllers
         {
             return View();
         }
+        public ActionResult Introduce()
+        {
+            return View();
+        }
+        public ActionResult Contact()
+        {
+            return View();
+        }
+        public ActionResult Gallery()
+        {
+            return View();
+        }
+        public ActionResult Professiors()
+        {
+            return View();
+        }
+        public ActionResult Course()
+        {
+            return View();
+        }
     }
 }

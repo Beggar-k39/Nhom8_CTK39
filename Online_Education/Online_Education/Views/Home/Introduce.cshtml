@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "Introduce";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+
+<h1 id="title" style="display:none">@ViewBag.Title</h1>
+@section who{
+    <section class="w3ls-bnrbtm py-5" id="who">
+        <div class="py-xl-5 py-lg-3">
+            <div class="row no-gutters">
+                <div class="col-xl-6 who-left-w3pvt">
+                    <h6 class="text-colors let-spa">Something</h6>
+                    <h3 class="text-bl font-weight-bold mt-2 mb-3">Đội ngũ giảng viên</h3>
+                    <p>
+                        Là những giảng viên có nhiều kinh nghiệm trong các lĩnh vực lập trình
+                    </p>
+                    <ul class="list-unstyled who-lists mt-4 ml-5">
+                        <li><span class="fa fa-caret-right"></span>Tham gia nhiều dự án lớn</li>
+                        <li class="my-2"><span class="fa fa-caret-right"></span>Có khả năng quản lý nhóm</li>
+                        <li><span class="fa fa-caret-right"></span>Kĩ sư công nghệ thông tin</li>
+                        <li class="mt-2"><span class="fa fa-caret-right"></span>Chịu được áp lực công việc cao</li>
+                    </ul>
+                    <div class="bars-main-info mt-5">
+                        <h3 class="text-bl font-weight-bold mb-4">Kĩ năng chung</h3>
+                        <div class="progress-one two-progress my-3">
+                            <h4 class="progress-tittle">Tiếng Anh</h4>
+                            <div class="progress-effect progress-effect-1">
+                            </div>
+                        </div>
+                        <div class="progress-one two-progress">
+                            <h4 class="progress-tittle">Truyền đạt</h4>
+                            <div class="progress-effect progress-effect-2 w-75">
+                            </div>
+                        </div>
+                        <div class="progress-one two-progress my-3">
+                            <h4 class="progress-tittle">Kinh nghiệm</h4>
+                            <div class="progress-effect progress-effect-3 w-100">
+                            </div>
+                        </div>
+                        <div class="progress-one two-progress my-3">
+                            <h4 class="progress-tittle">Quản trị dự án</h4>
+                            <div class="progress-effect w-50" style="background-color:green">
+                            </div>
+                        </div>
+                        <div class="progress-one two-progress my-3">
+                            <h4 class="progress-tittle">Ví dụ thực tế</h4>
+                            <div class="progress-effect w-100" style="background-color:blueviolet">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-xl-6 mt-xl-0 mt-5 text-xl-right text-center">
+                    <img class="img-fluid rounded" src="~/Content/Front_End/images/who.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+}
