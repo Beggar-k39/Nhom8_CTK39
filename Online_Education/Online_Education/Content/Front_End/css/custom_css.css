@@ -1,5 +1,5 @@
 ﻿html {
-    margin-top: 7%;
+    margin-top: 5%;
 }
 
 .main-top {
@@ -10,6 +10,7 @@
     top: 0;
     z-index: 100;
     transition: 0.4s;
+    padding:0px 10px;
 }
 
 .menu li a {
@@ -22,7 +23,7 @@
 }
 
 .short-ul {
-    margin-top: 10px !important;
+    margin-top: 0.5em !important;
 }
 
 .short-menu {
@@ -97,4 +98,20 @@
 }
 #slider img {
     object-fit: cover;
+}
+li.dn {
+    display: none;
+    color:white;
+
+}
+li.dn a {
+    color: white;
+}
+
+li.dk {
+    display: none;
+
+}
+li.dk a{
+    color:red;
 }
