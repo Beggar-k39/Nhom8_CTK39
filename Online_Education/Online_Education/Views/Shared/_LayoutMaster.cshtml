@@ -78,8 +78,8 @@
                         </li>
                         <li><a id="Gallery1" href="@Url.Action("Gallery","Home")">Ảnh</a></li>
                         <li><a id="Contact1" href="@Url.Action("Contact","Home")">Liên hệ</a></li>
-                        <li class="dn"><a href="@Url.Action("DangNhap","Home")">Đăng nhập</a></li>
-                        <li class="dk"><a href="@Url.Action("DangKy","Home")">Đăng ký</a></li>
+                        <li class="dn"><a href="@Url.Action("Index","Login")">Đăng nhập</a></li>
+                        <li class="dk"><a href="@Url.Action("Register","Login")">Đăng ký</a></li>
 
                     </ul>
                 </nav>
@@ -87,10 +87,10 @@
             <!-- //nav -->
             <!-- dwn -->
             <div class="text-center area-btn" style="padding:25px 0;">
-                <a href="http://w3layouts.com/" target="_blank" class="btn btn-success text-wh mt-lg-0 mt-2">
+                <a href="@Url.Action("Index","Login")" class="btn btn-success text-wh mt-lg-0 mt-2">
                     <span class="fa fa-user-o text-wh mr-2"></span>Đăng nhập
                 </a>
-                <a href="http://w3layouts.com/" target="_blank" class="btn btn-danger text-wh mt-lg-0 mt-2">
+                <a href="@Url.Action("Register","Login")" class="btn btn-danger text-wh mt-lg-0 mt-2">
                     <span class="fa fa-openid text-wh mr-2"></span>Đăng ký
                 </a>
             </div>
@@ -133,18 +133,18 @@
                         </li>
                         <li><a id="Gallery" href="@Url.Action("Gallery","Home")">Ảnh</a></li>
                         <li><a id="Contact" href="@Url.Action("Contact","Home")">Liên hệ</a></li>
-                        <li class="dn"><a href="@Url.Action("DangNhap","Home")">Đăng nhập</a></li>
-                        <li class="dk"><a href="@Url.Action("DangKy","Home")">Đăng ký</a></li>
+                        <li class="dn"><a href="@Url.Action("Index","Login")">Đăng nhập</a></li>
+                        <li class="dk"><a href="@Url.Action("Register","Login")">Đăng ký</a></li>
                     </ul>
                 </nav>
             </div>
             <!-- //nav -->
             <!-- dwn -->
             <div class="text-center area-btn" style="padding:0;">
-                <a href="http://w3layouts.com/" target="_blank" style="color:white;background-color:transparent;outline:none" class="btn btn-success">
+                <a href="@Url.Action("Index","Login")" style="color:white;background-color:transparent;outline:none" class="btn btn-success">
                     <span class="fa fa-user-o"></span>
                 </a>
-                <a href="http://w3layouts.com/" target="_blank" style="color:white;background-color:transparent" class="btn btn-success">
+                <a href="@Url.Action("Register","Login")" style="color:white;background-color:transparent" class="btn btn-success">
                     <span class="fa fa-openid"></span>
                 </a>
             </div>

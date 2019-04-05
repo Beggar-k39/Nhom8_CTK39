@@ -1,0 +1,202 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link href="~/Content/Front_End/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Front_End/css/login.css" rel="stylesheet" />
+    <link href="~/Content/Front_End/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container-fluid bao">
+        @* Sign In Part *@
+        <div class="board" id="dn">
+            <h1 class="display-5">Đăng Nhập</h1>
+            <form action="/" method="post">
+                <label>Tên đăng nhập</label><br />
+                <input class="form-control" name="userName" type="text" placeholder="Nhập tên đăng nhập" onblur="this.placeholder='Nhập tên đăng nhập'" onfocus="this.placeholder=''" /><br />
+                <label>Mật khẩu</label>
+                <input class="form-control" name="passWord" placeholder="Nhập mật khẩu" onblur="this.placeholder='Nhập mật khẩu'" type="password" onfocus="this.placeholder=''" /><br />
+                <small><a class="fgt" href="#"><i>Quên mật khẩu?</i> </a></small><br /><br />
+                <input class="btn btn btn-block btn-success" type="submit" name="btnSubmit" value="Đăng Nhập" />
+                <br />
+            </form>
+            <p>Hoặc đăng nhập qua|Hoặc <span id="dkbtn" >Đăng Ký</span> </p>
+            <div class="social">
+                <a class="fb-ic" href="#"></a>
+                <a class="skype-ic" href="#"></a>
+                <a class="gmail-ic" href="#"></a>
+            </div>
+        </div>
+        @* Sign Up Part *@
+        <div class="board" id="dk">
+            <span id="backbtn"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></span>
+            <h1 class="display-5">Đăng ký</h1>
+            <form action="/" method="post">
+                <label>Họ tên</label><br />
+                <input class="form-control" name="hoTen" type="text" placeholder="Nhập họ và tên" onblur="this.placeholder='Nhập họ và tên'" onfocus="this.placeholder=''" required />
+                <label>Giới tính</label>&nbsp;&nbsp;&nbsp;
+                <label class="radio-inline">&nbsp;&nbsp;&nbsp;<input type="radio" name="gioiTinh" checked>&nbsp;&nbsp;&nbsp;Nam</label>
+                <label class="radio-inline">&nbsp;&nbsp;&nbsp;<input type="radio" name="gioiTinh"> &nbsp;&nbsp;&nbsp;Nữ</label><br />
+                <label>Ngày Sinh</label>
+                <div class="row">
+                    <div class="col-sm">
+                        <select class="form-control" id="day" onchange="dayPro(this)"></select>
+                    </div>
+                    <div class="col-sm">
+                        <select class="form-control" id="month" onchange="monthPro(this)"></select>
+                    </div>
+                    <div class="col-sm">
+                        <select class="form-control" id="year" onchange=yearPro(this)"></select>
+                    </div>
+                </div>
+                <label>Số điện thoại</label>
+                <input class="form-control" name="sdt" type="text" placeholder="Nhập số điện thoại" onblur="this.placeholder='Nhập số điện thoại'" onfocus="this.placeholder=''" required />
+                <label>Email</label>
+                <input class="form-control" name="email" type="text" placeholder="Nhập thư điện tử" onblur="this.placeholder='Nhập thư điện tử'" onfocus="this.placeholder=''" required />
+                <label>Mật khẩu</label>
+                <input class="form-control" name="matkhau" type="text" placeholder="Nhập mật khẩu" onblur="this.placeholder='Nhập mật khẩu'" onfocus="this.placeholder=''" required />
+                <hr />
+                <input class="btn btn btn-block btn-warning" type="submit" name="btnSubmit" value="Đăng Ký" />
+            </form>
+        </div>
+    </div>
+    @* Srcipt Custom Date Time Group 8 *@
+    <script>
+        var thang31 = [1, 3, 5, 7, 8, 10, 12]; // Months with 31 day
+        var thang30 = [4, 6, 9, 11];    // Months with 30 day
+        // Get All Element
+        var slDay = document.getElementById('day'),
+            slMonth = document.getElementById('month'),
+            slYear = document.getElementById('year');
+        // Create first Selected
+        var strDay = `<option selected>Ngày</option>`,
+            strMonth = `<option selected>Tháng</option>`,
+            strYear = `<option selected>Năm</option>`;
+        // Create Date Variable
+        var d = new Date();
+        // Default data for Select
+        for (var i = 1; i <= 31; i++) {
+            strDay += `<option value="` + i + `">` + i + `</option>`;
+        }
+        for (var i = 1; i <= 12; i++) {
+            strMonth += `<option value="` + i + `">` + i + `</option>`;
+        }
+        for (var i = d.getFullYear() - 100; i <= d.getFullYear(); i++) {
+            strYear += `<option value="` + i + `">` + i + `</option>`;
+        }
+        slDay.innerHTML = strDay;
+        slMonth.innerHTML = strMonth;
+        slYear.innerHTML = strYear;
+        // Function Day Process
+        function dayPro(obj) {
+            var currDay = obj.value;
+            var currMonth = slMonth.value;
+            var currYear = slYear.value;
+            // If selected Month 2 and Day =30 or 31 => Reset Tháng
+            if (currMonth == 2 && (currDay == 30 || currDay == 31)) {
+                slMonth.innerHTML = strMonth;
+            }
+            // If Leap Year 
+            if (currYear % 4 != 0 && currMonth == 2 && currDay == 29) {
+                slYear.innerHTML = strYear;
+            }
+            //if (currDay==30)
+            
+        }
+        // Function Month Process
+        function monthPro(obj) {
+            debugger
+            var currDay = slDay.value;
+            var currMonth = obj.value;
+            var currYear = slYear.value;
+            console.log(currDay);
+            console.log(currMonth);
+            // If February and Day selected ==30 or 31
+            if (currMonth == 2 && (currDay == 30 || currDay == 31)) {
+                slDay.innerHTML = strDay;
+            }
+            // If month February and Day is not selected
+            var day = `<option selected>Ngày</option>`;
+            if (currMonth == 2&&currDay=="Ngày") {
+                for (var i = 1; i <= 29; i++) {
+                    day += `<option value="` + i + `">` + i + `</option>`;
+                }
+                slDay.innerHTML = day;
+            }
+            // Day selected == 31 and not month 31 day
+            if (currDay == 31 && thang31.find(m => m == currMonth) == undefined) {
+                slDay.innerHTML = strDay;
+            }
+            // Day is not selected and month has 30 day
+            if (thang30.find(m => m == currMonth) != undefined && currDay == "Ngày") {
+                for (var i = 1; i <= 30; i++) {
+                    day += `<option value="` + i + `">` + i + `</option>`;
+                }
+                slDay.innerHTML = day;
+            }
+            // If Not Leap Year is Selected and Month 2 => Reset Day 28
+            if (currYear % 4 != 0 && currMonth == 2 && currDay=="Ngày") {
+                for (var i = 1; i <= 28; i++) {
+                    day += `<option value="` + i + `">` + i + `</option>`;
+                }
+                slDay.innerHTML = day;
+            }
+            
+        }
+        // Function Year Process
+        function yearPro(obj) {
+            var currYear = obj.value;
+            var currMonth = slMonth.value;
+            var currDay = slDay.value;
+            // Leap Year and Month 2 and Day 29 => Reset Year
+            console.log(currDay);
+            // Not Leap Year But Selected Month 2 and Day 29
+            var day = `<option selected>Ngày</option>`;
+            if (currYear % 4 != 0 && currMonth==2 && currDay == 29) {
+                for (var i = 1; i <= 29; i++) {
+                    day += `<option value="` + i + `">` + i + `</option>`;
+                }
+                slDay.innerHTML = day;
+            }
+            //// If Not Leap Year and Month 2 => Set 28 Day
+            if (currYear % 4 != 0 && currMonth == 2) {
+                for (var i = 1; i <= 28; i++) {
+                    day += `<option value="` + i + `">` + i + `</option>`;
+                }
+                slDay.innerHTML = day;
+            }
+        }
+
+        // --End Date Process
+        // Process Animation
+        var dn = document.getElementById('dn');
+        var dk = document.getElementById('dk');
+        var dkbtn = document.getElementById('dkbtn');
+        var back = document.getElementById('backbtn');
+        console.log(dk);
+        dkbtn.onclick = function () {
+            dn.classList.remove('show');
+            dk.classList.remove('hide');
+
+            dn.classList.add('hide');
+            dk.classList.add('show');
+        }
+        back.addEventListener('click', function () {
+            dn.classList.remove('hide');
+            dk.classList.remove('show');
+
+            dn.classList.add('show');
+            dk.classList.add('hide');
+        });
+        // --End Process Animation
+    </script>
+    @* -- End Script Custom Date Time Group 8 *@
+</body>
+</html>

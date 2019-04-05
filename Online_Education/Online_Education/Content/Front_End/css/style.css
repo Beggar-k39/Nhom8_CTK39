@@ -1411,11 +1411,6 @@ h2.text-bg-click {
     .navbar-light .navbar-nav .nav-link {
         font-size: 12px;
     }
-
-    img.logo-img {
-        /*width: 30%;*/
-    }
-
     a.login-button-2 {
         font-size: 13px;
         padding: 27px 32px;
@@ -1478,14 +1473,9 @@ h2.text-bg-click {
     .logo-img {
         display:none;
     }
-    .nav {
-    }
 
     .menu-top {
         padding:0px 30px;
-    }
-
-    .nav_w3ls {
     }
 
     .w3ls-about-grid h4 {

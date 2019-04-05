@@ -122,6 +122,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -138,6 +139,7 @@
     <Content Include="Content\Front_End\css\css_slider.css" />
     <Content Include="Content\Front_End\css\custom_css.css" />
     <Content Include="Content\Front_End\css\font-awesome.min.css" />
+    <Content Include="Content\Front_End\css\register.css" />
     <Content Include="Content\Front_End\css\style.css" />
     <Content Include="Content\Front_End\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\Front_End\images\1.jpg" />
@@ -166,6 +168,7 @@
     <Content Include="Content\Front_End\images\who.jpg" />
     <Content Include="Content\Front_End\index.html" />
     <Content Include="Content\Front_End\js\custom_js.js" />
+    <Content Include="Content\Front_End\css\login.css" />
     <Content Include="Content\Front_End\my_images\asp_net.png" />
     <Content Include="Content\Front_End\my_images\banner1.jpg" />
     <Content Include="Content\Front_End\my_images\bootstrap-logo.png" />
@@ -298,6 +301,8 @@
     <Content Include="Views\Home\Professiors.cshtml" />
     <Content Include="Views\Home\Introduce.cshtml" />
     <Content Include="Views\Home\Course.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Login\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,198 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    font-family: Calibri;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.bao {
+    width: 100%;
+    height: 100%;
+    background-image: url(../my_images/pine-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.board {
+    width: 35%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10%;
+    color: gray;
+    padding: 1%;
+    background-color: #0000008f;
+    min-width: 350px;
+    border-radius: 10px;
+    transition: 1s;
+    animation: slide 2s forwards;
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(-100px) translateY(-50%);
+        opacity: 0
+    }
+
+    to {
+        transform: translateX(0) translateY(-50%);
+        opacity: 1;
+    }
+}
+
+.board h1 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.fgt {
+    float: right;
+}
+
+p {
+    text-align: center;
+}
+
+input[type='text'],
+input[type='password'] {
+    width: 100%;
+    border-radius: 10px;
+}
+
+input[type='radio'] {
+    transform: scale(1.5);
+}
+
+.social {
+    font-size: 0;
+    box-sizing: content-box;
+}
+
+    .social a {
+        display: inline-block;
+        width: 81px;
+        height: 81px;
+        border-radius: 50%;
+        margin-left: 40px;
+        opacity: 0.9;
+    }
+
+        .social a:hover {
+            opacity: 1;
+        }
+
+        .social a.fb-ic {
+            background-image: url(../my_images/icon-social.jpg);
+            background-position-x: 778px;
+            background-position-y: -58px;
+        }
+
+        .social a.skype-ic {
+            background-image: url(../my_images/icon-social.jpg);
+            background-position-x: 421px;
+            background-position-y: -183px;
+        }
+
+        .social a.gmail-ic {
+            background-image: url(../my_images/icon-social.jpg);
+            background-position-x: -71px;
+            background-position-y: -183px;
+        }
+
+@media only screen and (max-width:1100px) {
+    .social a {
+        margin-left: 25px;
+    }
+
+    .board h1 {
+        font-size: 30px;
+    }
+
+    .board {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width:414px) {
+    .social a {
+        margin-left: 20px;
+    }
+
+    .board h1 {
+        font-size: 25px;
+    }
+
+    .board {
+        font-size: 10px;
+    }
+}
+
+label {
+    margin: 10px 0 0 0 !important;
+}
+
+select {
+    overflow: scroll;
+    transition: 1s;
+}
+
+#dkbtn {
+    color: cornflowerblue;
+    cursor: pointer;
+}
+
+    #dkbtn:hover {
+        font-style: italic;
+    }
+
+#dn {
+    visibility: hidden;
+}
+
+#dk {
+    visibility: visible;
+}
+
+.show {
+    animation: rotate-reverse 2s forwards;
+    visibility: visible !important;
+}
+
+.hide {
+    animation: rotate 1s forwards;
+}
+
+#backbtn {
+    cursor: pointer;
+    color: white;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg) translateY(-50%);
+        opacity: 1
+    }
+
+    to {
+        transform: rotate(90deg) translateY(50%);
+        opacity: 0;
+    }
+}
+
+@keyframes rotate-reverse {
+    to {
+        transform: rotate(0deg) translateY(-50%);
+        opacity: 1;
+    }
+
+    from {
+        transform: rotate(-90deg) translateY(50%);
+        opacity: 0;
+    }
+}
