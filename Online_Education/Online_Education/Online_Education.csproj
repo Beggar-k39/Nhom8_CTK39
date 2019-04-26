@@ -185,6 +185,7 @@
     <Content Include="Content\Front_End\my_images\nodejs-logo.png" />
     <Content Include="Content\Front_End\my_images\react-logo.png" />
     <Content Include="Content\Front_End\my_images\thai.jpg" />
+    <Content Include="Content\Front_End\my_images\thanhha.jpg" />
     <Content Include="Content\Front_End\my_images\truong1.jpg" />
     <Content Include="Content\Front_End\my_images\truong2.jpg" />
     <Content Include="Content\Front_End\my_images\truong3.jpg" />
