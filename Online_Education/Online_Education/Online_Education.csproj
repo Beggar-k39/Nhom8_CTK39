@@ -172,6 +172,7 @@
     <Content Include="Content\Front_End\my_images\asp_net.png" />
     <Content Include="Content\Front_End\my_images\banner1.jpg" />
     <Content Include="Content\Front_End\my_images\bootstrap-logo.png" />
+    <Content Include="Content\Front_End\my_images\c-sharp-banner.jpg" />
     <Content Include="Content\Front_End\my_images\csharp-logo.png" />
     <Content Include="Content\Front_End\my_images\dalat-bg.jpg" />
     <Content Include="Content\Front_End\my_images\dalat-bg1.jpg" />
