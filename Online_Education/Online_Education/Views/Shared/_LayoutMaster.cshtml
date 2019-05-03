@@ -22,6 +22,12 @@
     <link href="~/Content/Front_End/css/css_slider.css" type="text/css" rel="stylesheet" media="all">
     <!-- Custom CSS Group 8-->
     <link href="~/Content/Front_End/css/custom_css.css" rel="stylesheet" />
+    <!-- Font awesome -->
+    <link href="~/Content/Front_End/css/font-awesome.css" rel="stylesheet" />
+
+
+    <!-- Slick slider -->
+    <link rel="stylesheet" type="text/css" href="~/Content/Front_End/css/slick.css">
     <!-- banner slider -->
     <link rel="stylesheet" href="~/Content/Front_End/css/style.css" type="text/css" media="all" />
     <!-- Style-CSS -->
@@ -164,6 +170,7 @@
     <!-- //banner bottom grids -->
     <!-- Course -->
     @RenderSection("course", false)
+    @RenderSection("Coursedetail", false)
     <!-- //Course -->
     <!-- about -->
     @RenderSection("about", false)
@@ -390,24 +397,42 @@
     <link href="~/Content/nivo-slider/nivo-slider.css" rel="stylesheet" />
     <script src="~/Content/nivo-slider/jquery.nivo.slider.pack.js"></script>
     <script type="text/javascript">
-        $(window).on('load', function () {
-            $('#slider').nivoSlider(
-                {
-                    controlNav: false,
-                    directionNav: false,
-                    pauseTime: 3000,
-                    pauseOnHover: false,
-                });
 
-            //alert($('#title').text());
-            // Active Menu
-            var x = $('#title').text();
-            var str = "#" + x;
-            var str1 = str + "1";
-            $(str).addClass('text-wh');
-            $(str1).addClass('text-wh');
-            // End Active Menu
-        });
+           <!--    jQuery library-- >
+            <script src="~/Content/js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="~/Content/js/bootstrap.js"></script>
+    <!-- Slick slider -->
+    <script type="text/javascript" src="~/Content/Front_End/js/slick.js"></script>
+    <!-- Counter -->
+    <script type="text/javascript" src="~/Content/Front_End/js/waypoints.js"></script>
+    <script type="text/javascript" src="~/Content/Front_End/js/jquery.counterup.js"></script>
+    <!-- Mixit slider -->
+    <script type="text/javascript" src="~/Content/Front_End/js/jquery.mixitup.js"></script>
+    <!-- Add fancyBox -->
+    <script type="text/javascript" src="~/Content/Front_End/js/jquery.fancybox.pack.js"></script>
+
+
+    <!-- Custom js -->
+    <script src="~/Content/Front_End/js/custom.js"></script>
+    $(window).on('load', function () {
+    $('#slider').nivoSlider(
+    {
+    controlNav: false,
+    directionNav: false,
+    pauseTime: 3000,
+    pauseOnHover: false,
+    });
+
+    //alert($('#title').text());
+    // Active Menu
+    var x = $('#title').text();
+    var str = "#" + x;
+    var str1 = str + "1";
+    $(str).addClass('text-wh');
+    $(str1).addClass('text-wh');
+    // End Active Menu
+    });
     </script>
     @RenderSection("script", required: false)
     <!-- // End Script Custom Group 8-->

@@ -13,7 +13,7 @@ namespace Online_Education.Controllers
         {
             return View();
         }
-        public ActionResult CSharp()
+        public ActionResult CourseDetail()
         {
             return View();
         }
