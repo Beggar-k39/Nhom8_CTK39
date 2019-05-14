@@ -1,0 +1,88 @@
+﻿<div class="modal fade modal-add" id="modalcall" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Thêm loại khóa học</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" id="sample-form">
+
+                    <div class="form-group has-info hoten-color">
+                        <label style="font-weight:bold" for="hoten" class="col-xs-12 col-sm-2 control-label no-padding-right">Họ tên</label>
+
+                        <div class="col-xs-12 col-sm-7">
+                            <span class="block input-icon input-icon-right">
+                                <input type="text" id="hoten" name="hoten" class="width-100">
+                                <i class="ace-icon fa fa-info-circle hoten-ic"></i>
+                            </span>
+                        </div>
+                        <div class="help-block col-xs-12 col-sm-reset inline hoten-text" style="visibility:hidden">Không đc bỏ trống </div>
+                    </div>
+                    <div class="form-group has-info ngaysinh-color">
+                        <label style="font-weight:bold" for="tenlkh" class="col-xs-12 col-sm-2 control-label no-padding-right">Ngày sinh</label>
+
+                        <div class="col-xs-12 col-sm-7">
+                            <div class="input-group">
+                                <input class="form-control date-picker" type="text" data-date-format="dd-mm-yyyy" id="ngaysinh">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-calendar bigger-110"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="help-block col-xs-12 col-sm-reset inline ngaysinh-text" style="visibility:hidden">Không đc bỏ trống </div>
+                    </div>
+                    <div class="form-group has-info sdt-color">
+                        <label style="font-weight:bold" for="sdt" class="col-xs-12 col-sm-2 control-label no-padding-right">Số điện thoại</label>
+
+                        <div class="col-xs-12 col-sm-7">
+                            <span class="block input-icon input-icon-right">
+                                <input type="text" id="sdt" name="sdt" class="width-100">
+                                <i class="ace-icon fa fa-info-circle sdt-ic"></i>
+                            </span>
+                        </div>
+                        <div class="help-block col-xs-12 col-sm-reset inline sdt-text" style="visibility:hidden">Không đc bỏ trống </div>
+                    </div>
+                    <div class="form-group has-info email-color">
+                        <label style="font-weight:bold" for="email" class="col-xs-12 col-sm-2 control-label no-padding-right">Email</label>
+
+                        <div class="col-xs-12 col-sm-7">
+                            <span class="block input-icon input-icon-right">
+                                <input type="text" id="email" name="email" class="width-100">
+                                <i class="ace-icon fa fa-info-circle sdt-ic"></i>
+                            </span>
+                        </div>
+                        <div class="help-block col-xs-12 col-sm-reset inline email-text" style="visibility:hidden">Không đc bỏ trống </div>
+                    </div>
+                    <div class="form-group has-info diachi-color">
+                        <label style="font-weight:bold" for="diachi" class="col-xs-12 col-sm-2 control-label no-padding-right">Địa chỉ</label>
+
+                        <div class="col-xs-12 col-sm-7">
+                            <span class="block input-icon input-icon-right">
+                                <input type="text" id="diachi" name="diachi" class="width-100">
+                                <i class="ace-icon fa fa-info-circle sdt-ic"></i>
+                            </span>
+                        </div>
+                        <div class="help-block col-xs-12 col-sm-reset inline diachi-text" style="visibility:hidden">Không đc bỏ trống </div>
+                    </div>
+                    <div class="form-group has-info idtaikhoan-color">
+                        <label style="font-weight:bold" for="idtaikhoan" class="col-xs-12 col-sm-2 control-label no-padding-right">ID Tài khoản</label>
+
+                        <div class="col-xs-12 col-sm-7">
+                            <span class="block input-icon input-icon-right">
+                                <input type="text" id="idtaikhoan" name="idtaikhoan" class="width-100">
+                                <i class="ace-icon fa fa-info-circle sdt-ic"></i>
+                            </span>
+                        </div>
+                        <div class="help-block col-xs-12 col-sm-reset inline idtaikhoan-text" style="visibility:hidden">Không đc bỏ trống </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btn-process" class="btn btn-success btn-submit">Thêm</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Thoát</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

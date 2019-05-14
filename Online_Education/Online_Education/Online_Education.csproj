@@ -48,6 +48,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNet.TelemetryCorrelation, Version=1.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.5\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
     </Reference>
@@ -64,6 +70,8 @@
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.5.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -121,6 +129,57 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\GiangVienController.cs" />
+    <Compile Include="Areas\Admin\Controllers\GopYController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HocVienController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\InfoController.cs" />
+    <Compile Include="Areas\Admin\Controllers\KhoaHocController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TaiKhoanController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TinTucController.cs" />
+    <Compile Include="Areas\Admin\Models\ChucVu.cs">
+      <DependentUpon>ModelOnlineEducation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Models\GiangVien.cs">
+      <DependentUpon>ModelOnlineEducation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Models\GopY.cs">
+      <DependentUpon>ModelOnlineEducation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Models\HocVien.cs">
+      <DependentUpon>ModelOnlineEducation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Models\HocVien_KhoaHoc.cs">
+      <DependentUpon>ModelOnlineEducation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Models\KhoaHoc.cs">
+      <DependentUpon>ModelOnlineEducation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Models\LoaiKhoaHoc.cs">
+      <DependentUpon>ModelOnlineEducation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Models\ModelOnlineEducation.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelOnlineEducation.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Models\ModelOnlineEducation.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelOnlineEducation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Models\ModelOnlineEducation.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelOnlineEducation.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Models\TaiKhoan.cs">
+      <DependentUpon>ModelOnlineEducation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Models\TinTuc.cs">
+      <DependentUpon>ModelOnlineEducation.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
@@ -129,6 +188,189 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Admin\Models\ModelOnlineEducation.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelOnlineEducation.edmx</DependentUpon>
+      <LastGenOutput>ModelOnlineEducation.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Admin\Models\ModelOnlineEducation.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelOnlineEducation.edmx</DependentUpon>
+      <LastGenOutput>ModelOnlineEducation.cs</LastGenOutput>
+    </Content>
+    <Content Include="Content\Back_End\.gitignore" />
+    <Content Include="Content\Back_End\assets\css\ace-ie.min.css" />
+    <Content Include="Content\Back_End\assets\css\ace-part2.min.css" />
+    <Content Include="Content\Back_End\assets\css\ace-rtl.min.css" />
+    <Content Include="Content\Back_End\assets\css\ace-skins.min.css" />
+    <Content Include="Content\Back_End\assets\css\ace.min.css" />
+    <Content Include="Content\Back_End\assets\css\bootstrap-colorpicker.min.css" />
+    <Content Include="Content\Back_End\assets\css\bootstrap-datepicker3.min.css" />
+    <Content Include="Content\Back_End\assets\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="Content\Back_End\assets\css\bootstrap-duallistbox.min.css" />
+    <Content Include="Content\Back_End\assets\css\bootstrap-editable.min.css" />
+    <Content Include="Content\Back_End\assets\css\bootstrap-multiselect.min.css" />
+    <Content Include="Content\Back_End\assets\css\bootstrap-timepicker.min.css" />
+    <Content Include="Content\Back_End\assets\css\bootstrap.min.css" />
+    <Content Include="Content\Back_End\assets\css\chosen.min.css" />
+    <Content Include="Content\Back_End\assets\css\colorbox.min.css" />
+    <Content Include="Content\Back_End\assets\css\daterangepicker.min.css" />
+    <Content Include="Content\Back_End\assets\css\dropzone.min.css" />
+    <Content Include="Content\Back_End\assets\css\font-awesome.min.css" />
+    <Content Include="Content\Back_End\assets\css\fonts.googleapis.com.css" />
+    <Content Include="Content\Back_End\assets\css\fullcalendar.min.css" />
+    <Content Include="Content\Back_End\assets\css\images\meteorshower2.jpg" />
+    <Content Include="Content\Back_End\assets\css\images\pattern.jpg" />
+    <Content Include="Content\Back_End\assets\css\jquery-ui.custom.min.css" />
+    <Content Include="Content\Back_End\assets\css\jquery-ui.min.css" />
+    <Content Include="Content\Back_End\assets\css\jquery.gritter.min.css" />
+    <Content Include="Content\Back_End\assets\css\prettify.min.css" />
+    <Content Include="Content\Back_End\assets\css\select2.min.css" />
+    <Content Include="Content\Back_End\assets\css\ui.jqgrid.min.css" />
+    <Content Include="Content\Back_End\assets\font-awesome\4.5.0\css\font-awesome.min.css" />
+    <Content Include="Content\Back_End\assets\font-awesome\4.5.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Back_End\assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Back_End\assets\images\avatars\avatar.png" />
+    <Content Include="Content\Back_End\assets\images\avatars\avatar1.png" />
+    <Content Include="Content\Back_End\assets\images\avatars\avatar2.png" />
+    <Content Include="Content\Back_End\assets\images\avatars\avatar3.png" />
+    <Content Include="Content\Back_End\assets\images\avatars\avatar4.png" />
+    <Content Include="Content\Back_End\assets\images\avatars\avatar5.png" />
+    <Content Include="Content\Back_End\assets\images\avatars\profile-pic.jpg" />
+    <Content Include="Content\Back_End\assets\images\avatars\user.jpg" />
+    <Content Include="Content\Back_End\assets\images\bootstrap-colorpicker\alpha-horizontal.png" />
+    <Content Include="Content\Back_End\assets\images\bootstrap-colorpicker\alpha.png" />
+    <Content Include="Content\Back_End\assets\images\bootstrap-colorpicker\hue-horizontal.png" />
+    <Content Include="Content\Back_End\assets\images\bootstrap-colorpicker\hue.png" />
+    <Content Include="Content\Back_End\assets\images\bootstrap-colorpicker\saturation.png" />
+    <Content Include="Content\Back_End\assets\images\email\email1.png" />
+    <Content Include="Content\Back_End\assets\images\email\email2.png" />
+    <Content Include="Content\Back_End\assets\images\email\email3.png" />
+    <Content Include="Content\Back_End\assets\images\email\email4.png" />
+    <Content Include="Content\Back_End\assets\images\gallery\image-1.jpg" />
+    <Content Include="Content\Back_End\assets\images\gallery\image-2.jpg" />
+    <Content Include="Content\Back_End\assets\images\gallery\image-3.jpg" />
+    <Content Include="Content\Back_End\assets\images\gallery\image-4.jpg" />
+    <Content Include="Content\Back_End\assets\images\gallery\image-5.jpg" />
+    <Content Include="Content\Back_End\assets\images\gallery\image-6.jpg" />
+    <Content Include="Content\Back_End\assets\images\gallery\thumb-1.jpg" />
+    <Content Include="Content\Back_End\assets\images\gallery\thumb-2.jpg" />
+    <Content Include="Content\Back_End\assets\images\gallery\thumb-3.jpg" />
+    <Content Include="Content\Back_End\assets\images\gallery\thumb-4.jpg" />
+    <Content Include="Content\Back_End\assets\images\gallery\thumb-5.jpg" />
+    <Content Include="Content\Back_End\assets\images\gallery\thumb-6.jpg" />
+    <Content Include="Content\Back_End\assets\images\placeholder\165x90.png" />
+    <Content Include="Content\Back_End\assets\images\placeholder\255x150.png" />
+    <Content Include="Content\Back_End\assets\images\placeholder\530x270.png" />
+    <Content Include="Content\Back_End\assets\images\placeholder\550x280.png" />
+    <Content Include="Content\Back_End\assets\js\ace-editable.min.js" />
+    <Content Include="Content\Back_End\assets\js\ace-elements.min.js" />
+    <Content Include="Content\Back_End\assets\js\ace-extra.min.js" />
+    <Content Include="Content\Back_End\assets\js\ace.min.js" />
+    <Content Include="Content\Back_End\assets\js\autosize.min.js" />
+    <Content Include="Content\Back_End\assets\js\bootbox.js" />
+    <Content Include="Content\Back_End\assets\js\bootstrap-colorpicker.min.js" />
+    <Content Include="Content\Back_End\assets\js\bootstrap-datepicker.min.js" />
+    <Content Include="Content\Back_End\assets\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="Content\Back_End\assets\js\bootstrap-editable.min.js" />
+    <Content Include="Content\Back_End\assets\js\bootstrap-markdown.min.js" />
+    <Content Include="Content\Back_End\assets\js\bootstrap-multiselect.min.js" />
+    <Content Include="Content\Back_End\assets\js\bootstrap-tag.min.js" />
+    <Content Include="Content\Back_End\assets\js\bootstrap-timepicker.min.js" />
+    <Content Include="Content\Back_End\assets\js\bootstrap-wysiwyg.min.js" />
+    <Content Include="Content\Back_End\assets\js\bootstrap.min.js" />
+    <Content Include="Content\Back_End\assets\js\buttons.colVis.min.js" />
+    <Content Include="Content\Back_End\assets\js\buttons.flash.min.js" />
+    <Content Include="Content\Back_End\assets\js\buttons.html5.min.js" />
+    <Content Include="Content\Back_End\assets\js\buttons.print.min.js" />
+    <Content Include="Content\Back_End\assets\js\chosen.jquery.min.js" />
+    <Content Include="Content\Back_End\assets\js\dataTables.buttons.min.js" />
+    <Content Include="Content\Back_End\assets\js\dataTables.select.min.js" />
+    <Content Include="Content\Back_End\assets\js\daterangepicker.min.js" />
+    <Content Include="Content\Back_End\assets\js\dropzone.min.js" />
+    <Content Include="Content\Back_End\assets\js\excanvas.min.js" />
+    <Content Include="Content\Back_End\assets\js\fullcalendar.min.js" />
+    <Content Include="Content\Back_End\assets\js\grid.locale-en.js" />
+    <Content Include="Content\Back_End\assets\js\holder.min.js" />
+    <Content Include="Content\Back_End\assets\js\html5shiv.min.js" />
+    <Content Include="Content\Back_End\assets\js\jquery-1.11.3.min.js" />
+    <Content Include="Content\Back_End\assets\js\jquery-2.1.4.min.js" />
+    <Content Include="Content\Back_End\assets\js\jquery-additional-methods.min.js" />
+    <Content Include="Content\Back_End\assets\js\jquery-typeahead.js" />
+    <Content Include="Content\Back_End\assets\js\jquery-ui.custom.min.js" />
+    <Content Include="Content\Back_End\assets\js\jquery-ui.min.js" />
+    <Content Include="Content\Back_End\assets\js\jquery.bootstrap-duallistbox.min.js" />
+    <Content Include="Content\Back_End\assets\js\jquery.colorbox.min.js" />
+    <Content Include="Content\Back_End\assets\js\jquery.dataTables.bootstrap.min.js" />
+    <Content Include="Content\Back_End\assets\js\jquery.dataTables.min.js" />
+    <Content Include="Content\Back_End\assets\js\jquery.easypiechart.min.js" />
+    <Content Include="Content\Back_End\assets\js\jquery.flot.min.js" />
+    <Content Include="Content\Back_End\assets\js\jquery.flot.pie.min.js" />
+    <Content Include="Content\Back_End\assets\js\jquery.flot.resize.min.js" />
+    <Content Include="Content\Back_End\assets\js\jquery.gritter.min.js" />
+    <Content Include="Content\Back_End\assets\js\jquery.hotkeys.index.min.js" />
+    <Content Include="Content\Back_End\assets\js\jquery.inputlimiter.min.js" />
+    <Content Include="Content\Back_End\assets\js\jquery.jqGrid.min.js" />
+    <Content Include="Content\Back_End\assets\js\jquery.knob.min.js" />
+    <Content Include="Content\Back_End\assets\js\jquery.maskedinput.min.js" />
+    <Content Include="Content\Back_End\assets\js\jquery.mobile.custom.min.js" />
+    <Content Include="Content\Back_End\assets\js\jquery.nestable.min.js" />
+    <Content Include="Content\Back_End\assets\js\jquery.raty.min.js" />
+    <Content Include="Content\Back_End\assets\js\jquery.sparkline.index.min.js" />
+    <Content Include="Content\Back_End\assets\js\jquery.ui.touch-punch.min.js" />
+    <Content Include="Content\Back_End\assets\js\jquery.validate.min.js" />
+    <Content Include="Content\Back_End\assets\js\markdown.min.js" />
+    <Content Include="Content\Back_End\assets\js\moment.min.js" />
+    <Content Include="Content\Back_End\assets\js\prettify.min.js" />
+    <Content Include="Content\Back_End\assets\js\respond.min.js" />
+    <Content Include="Content\Back_End\assets\js\select2.min.js" />
+    <Content Include="Content\Back_End\assets\js\spin.js" />
+    <Content Include="Content\Back_End\assets\js\spinbox.min.js" />
+    <Content Include="Content\Back_End\assets\js\tree.min.js" />
+    <Content Include="Content\Back_End\assets\js\wizard.min.js" />
+    <Content Include="Content\Back_End\assets\myimages\thai.jpg" />
+    <Content Include="Content\Back_End\assets\swf\flashExport.swf" />
+    <Content Include="Content\Back_End\blank.html" />
+    <Content Include="Content\Back_End\buttons.html" />
+    <Content Include="Content\Back_End\calendar.html" />
+    <Content Include="Content\Back_End\content-slider.html" />
+    <Content Include="Content\Back_End\dropzone.html" />
+    <Content Include="Content\Back_End\elements.html" />
+    <Content Include="Content\Back_End\email-confirmation.html" />
+    <Content Include="Content\Back_End\email-contrast.html" />
+    <Content Include="Content\Back_End\email-navbar.html" />
+    <Content Include="Content\Back_End\email-newsletter.html" />
+    <Content Include="Content\Back_End\email.html" />
+    <Content Include="Content\Back_End\error-404.html" />
+    <Content Include="Content\Back_End\error-500.html" />
+    <Content Include="Content\Back_End\faq.html" />
+    <Content Include="Content\Back_End\form-elements-2.html" />
+    <Content Include="Content\Back_End\form-elements.html" />
+    <Content Include="Content\Back_End\form-wizard.html" />
+    <Content Include="Content\Back_End\gallery.html" />
+    <Content Include="Content\Back_End\grid.html" />
+    <Content Include="Content\Back_End\inbox.html" />
+    <Content Include="Content\Back_End\index.html" />
+    <Content Include="Content\Back_End\invoice.html" />
+    <Content Include="Content\Back_End\jqgrid.html" />
+    <Content Include="Content\Back_End\jquery-ui.html" />
+    <Content Include="Content\Back_End\login.html" />
+    <Content Include="Content\Back_End\mobile-menu-1.html" />
+    <Content Include="Content\Back_End\mobile-menu-2.html" />
+    <Content Include="Content\Back_End\mobile-menu-3.html" />
+    <Content Include="Content\Back_End\nestable-list.html" />
+    <Content Include="Content\Back_End\pricing.html" />
+    <Content Include="Content\Back_End\profile.html" />
+    <Content Include="Content\Back_End\search.html" />
+    <Content Include="Content\Back_End\tables.html" />
+    <Content Include="Content\Back_End\timeline.html" />
+    <Content Include="Content\Back_End\top-menu.html" />
+    <Content Include="Content\Back_End\treeview.html" />
+    <Content Include="Content\Back_End\two-menu-1.html" />
+    <Content Include="Content\Back_End\two-menu-2.html" />
+    <Content Include="Content\Back_End\typography.html" />
+    <Content Include="Content\Back_End\widgets.html" />
+    <Content Include="Content\Back_End\wysiwyg.html" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -226,6 +468,12 @@
     <Content Include="Content\Front_End\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\Front_End\fonts\fontawesome-webfont.woff2" />
     <Content Include="Content\Front_End\fonts\FontAwesome.otf" />
+    <Content Include="HinhAnh\gritter.png" />
+    <Content Include="HinhAnh\Khám phá ý tưởng về Lego.jpg" />
+    <Content Include="HinhAnh\Otherworld Realms_ Photo.png" />
+    <Content Include="HinhAnh\sep.jpg" />
+    <Content Include="HinhAnh\yasuo.jpg" />
+    <Content Include="HinhAnh\zed.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -254,6 +502,49 @@
     <Content Include="Content\nivo-slider\README" />
     <Content Include="Content\nivo-slider\themes\.DS_Store" />
     <Content Include="Content\nivo-slider\themes\dark\.DS_Store" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Content\Back_End\assets\font-awesome\4.5.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Back_End\assets\font-awesome\4.5.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Back_End\assets\font-awesome\4.5.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Back_End\assets\font-awesome\4.5.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\Back_End\assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\Back_End\assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\Back_End\assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\Back_End\assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\Back_End\LICENSE.md" />
+    <Content Include="Content\Back_End\README.md" />
+    <Content Include="Areas\Admin\Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_navbar.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_footer.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Sidebar.cshtml" />
+    <EntityDeploy Include="Areas\Admin\Models\ModelOnlineEducation.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelOnlineEducation.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\Admin\Models\ModelOnlineEducation.edmx.diagram">
+      <DependentUpon>ModelOnlineEducation.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Modal_Create_Update.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Modal_Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\TaiKhoan\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\HocVien\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\GopY\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\GiangVien\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\KhoaHoc\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\TinTuc\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\TaiKhoan\Modal_Create_Update.cshtml" />
+    <Content Include="Areas\Admin\Views\TaiKhoan\Modal_Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\GopY\Modal_Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\HocVien\Modal_Create_Update.cshtml" />
+    <Content Include="Areas\Admin\Views\HocVien\Modal_Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\KhoaHoc\Modal_Create_Update.cshtml" />
+    <Content Include="Areas\Admin\Views\KhoaHoc\Modal_Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\TinTuc\Modal_Create_Update.cshtml" />
+    <Content Include="Areas\Admin\Views\TinTuc\Modal_Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\GiangVien\Modal_Create_Update.cshtml" />
+    <Content Include="Areas\Admin\Views\GiangVien\Modal_Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Info\Index.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -265,6 +556,209 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\js_BackEnd\bootbox\bootbox.all.min.js" />
+    <Content Include="Scripts\js_BackEnd\bootbox\bootbox.locales.min.js" />
+    <Content Include="Scripts\js_BackEnd\bootbox\bootbox.min.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\adapters\jquery.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\build-config.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\ckeditor.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\config.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\contents.css" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\af.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\ar.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\az.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\bg.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\bn.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\bs.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\ca.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\cs.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\cy.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\da.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\de-ch.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\de.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\el.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\en-au.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\en-ca.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\en-gb.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\en.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\eo.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\es-mx.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\es.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\et.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\eu.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\fa.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\fi.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\fo.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\fr-ca.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\fr.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\gl.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\gu.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\he.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\hi.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\hr.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\hu.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\id.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\is.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\it.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\ja.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\ka.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\km.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\ko.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\ku.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\lt.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\lv.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\mk.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\mn.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\ms.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\nb.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\nl.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\no.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\oc.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\pl.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\pt-br.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\pt.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\ro.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\ru.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\si.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\sk.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\sl.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\sq.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\sr-latn.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\sr.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\sv.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\th.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\tr.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\tt.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\ug.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\uk.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\vi.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\zh-cn.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\lang\zh.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\plugins\balloonpanel\skins\kama\balloonpanel.css" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\plugins\balloonpanel\skins\moono-lisa\balloonpanel.css" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\plugins\balloonpanel\skins\moono-lisa\images\close.png" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\plugins\balloonpanel\skins\moono-lisa\images\hidpi\close.png" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\plugins\balloonpanel\skins\moono\balloonpanel.css" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\plugins\balloonpanel\skins\moono\images\close.png" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\plugins\balloonpanel\skins\moono\images\hidpi\close.png" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\plugins\balloontoolbar\skins\default.css" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\plugins\balloontoolbar\skins\kama\balloontoolbar.css" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\plugins\balloontoolbar\skins\moono-lisa\balloontoolbar.css" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\plugins\balloontoolbar\skins\moono\balloontoolbar.css" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\plugins\cloudservices\plugin.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\plugins\easyimage\dialogs\easyimagealt.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\plugins\easyimage\styles\easyimage.css" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\plugins\icons.png" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\plugins\icons_hidpi.png" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\plugins\imagebase\styles\imagebase.css" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\plugins\link\images\anchor.png" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\plugins\link\images\hidpi\anchor.png" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\plugins\widget\images\handle.png" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\css\samples.css" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\img\github-top.png" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\img\header-bg.png" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\img\header-separator.png" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\img\logo.png" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\img\logo.svg" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\img\navigation-tip.png" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\index.html" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\js\sample.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\js\sf.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\old\ajax.html" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\old\api.html" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\old\appendto.html" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\old\assets\inlineall\logo.png" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\old\assets\outputxhtml\outputxhtml.css" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\old\assets\posteddata.php" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\old\assets\sample.jpg" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\old\assets\uilanguages\languages.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\old\datafiltering.html" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\old\dialog\assets\my_dialog.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\old\dialog\dialog.html" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\old\divreplace.html" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\old\easyimage\easyimage.html" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\old\enterkey\enterkey.html" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\old\index.html" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\old\inlineall.html" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\old\inlinebycode.html" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\old\inlinetextarea.html" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\old\jquery.html" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\old\readonly.html" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\old\replacebyclass.html" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\old\replacebycode.html" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\old\sample.css" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\old\sample.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\old\sample_posteddata.php" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\old\tabindex.html" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\old\toolbar\toolbar.html" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\old\uicolor.html" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\old\uilanguages.html" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\old\wysiwygarea\fullpage.html" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\old\xhtmlstyle.html" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\toolbarconfigurator\css\fontello.css" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\toolbarconfigurator\font\fontello.svg" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\toolbarconfigurator\font\LICENSE.txt" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\toolbarconfigurator\index.html" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\toolbarconfigurator\js\abstracttoolbarmodifier.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\toolbarconfigurator\js\fulltoolbareditor.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\toolbarconfigurator\js\toolbarmodifier.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\toolbarconfigurator\js\toolbartextmodifier.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\toolbarconfigurator\lib\codemirror\codemirror.css" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\toolbarconfigurator\lib\codemirror\codemirror.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\toolbarconfigurator\lib\codemirror\javascript.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\toolbarconfigurator\lib\codemirror\neo.css" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\toolbarconfigurator\lib\codemirror\show-hint.css" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\toolbarconfigurator\lib\codemirror\show-hint.js" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\skins\moono-lisa\dialog.css" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\skins\moono-lisa\dialog_ie.css" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\skins\moono-lisa\dialog_ie8.css" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\skins\moono-lisa\dialog_iequirks.css" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\skins\moono-lisa\editor.css" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\skins\moono-lisa\editor_gecko.css" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\skins\moono-lisa\editor_ie.css" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\skins\moono-lisa\editor_ie8.css" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\skins\moono-lisa\editor_iequirks.css" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\skins\moono-lisa\icons.png" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\skins\moono-lisa\icons_hidpi.png" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\skins\moono-lisa\images\arrow.png" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\skins\moono-lisa\images\close.png" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\skins\moono-lisa\images\hidpi\close.png" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\skins\moono-lisa\images\hidpi\lock-open.png" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\skins\moono-lisa\images\hidpi\lock.png" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\skins\moono-lisa\images\hidpi\refresh.png" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\skins\moono-lisa\images\lock-open.png" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\skins\moono-lisa\images\lock.png" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\skins\moono-lisa\images\refresh.png" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\skins\moono-lisa\images\spinner.gif" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\styles.js" />
+    <Content Include="Scripts\js_BackEnd\dataTable.js" />
+    <Content Include="Scripts\js_BackEnd\Form.js" />
+    <Content Include="Scripts\js_BackEnd\Layout.js" />
+    <Content Include="Scripts\js_BackEnd\Loading\.gitignore" />
+    <Content Include="Scripts\js_BackEnd\Loading\.idea\markdown-navigator.xml" />
+    <Content Include="Scripts\js_BackEnd\Loading\.idea\markdown-navigator\profiles_settings.xml" />
+    <Content Include="Scripts\js_BackEnd\Loading\examle\image.png" />
+    <Content Include="Scripts\js_BackEnd\Loading\examle\preloader.html" />
+    <Content Include="Scripts\js_BackEnd\Loading\gulpfile.js" />
+    <Content Include="Scripts\js_BackEnd\Modal.js" />
+    <Content Include="Scripts\js_BackEnd\Loading\src\css\preloader.css" />
+    <Content Include="Scripts\js_BackEnd\Loading\src\js\jquery.preloader.js" />
+    <Content Include="Scripts\js_BackEnd\Loading\src\js\jquery.preloader.min.js" />
+    <Content Include="Scripts\js_BackEnd\QL_GiangVien.js" />
+    <Content Include="Scripts\js_BackEnd\QL_GopY.js" />
+    <Content Include="Scripts\js_BackEnd\QL_HocVien.js" />
+    <Content Include="Scripts\js_BackEnd\QL_KhoaHoc.js" />
+    <Content Include="Scripts\js_BackEnd\QL_LoaiKhoaHoc.js" />
+    <Content Include="Scripts\js_BackEnd\QL_TaiKhoan.js" />
+    <Content Include="Scripts\js_BackEnd\QL_TinTuc.js" />
+    <Content Include="Scripts\js_FrontEnd\Register.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
@@ -303,6 +797,23 @@
     <Content Include="Views\Home\Course.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Login\Register.cshtml" />
+    <Content Include="Scripts\js_BackEnd\Loading\LICENSE" />
+    <Content Include="Scripts\js_BackEnd\Loading\package.json" />
+    <Content Include="Scripts\js_BackEnd\Loading\README.md" />
+    <Content Include="Scripts\js_BackEnd\Loading\src\css\preloader.scss" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\CHANGES.md" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\LICENSE.md" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\README.md" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\toolbarconfigurator\font\config.json" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\toolbarconfigurator\font\fontello.eot" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\toolbarconfigurator\font\fontello.ttf" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\toolbarconfigurator\font\fontello.woff" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
+    <Content Include="Scripts\js_BackEnd\ckeditor\skins\moono-lisa\readme.md" />
+    <Content Include="Views\Login\DangKy.cshtml" />
+    <Content Include="Views\Login\ForgotPassWord.cshtml" />
+    <Content Include="Views\Login\ChangePassWord.cshtml" />
+    <Content Include="Views\Login\Verify.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -318,6 +829,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

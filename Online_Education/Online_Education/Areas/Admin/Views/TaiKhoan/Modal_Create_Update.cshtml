@@ -1,0 +1,61 @@
+﻿<div class="modal fade modal-add" id="modalcall" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Thêm loại khóa học</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" id="sample-form">
+
+                    <div class="form-group has-info tendangnhap-color">
+                        <label style="font-weight:bold" for="tendangnhap" class="col-xs-12 col-sm-2 control-label no-padding-right">Tên đăng nhập</label>
+
+                        <div class="col-xs-12 col-sm-7">
+                            <span class="block input-icon input-icon-right">
+                                <input type="text" id="tendangnhap" name="tendangnhap" class="width-100" onkeydown="validate()" onblur="validate()">
+                                <i class="ace-icon fa fa-info-circle tendangnhap-ic"></i>
+                            </span>
+                        </div>
+                        <div class="help-block col-xs-12 col-sm-reset inline tendangnhap-text" style="visibility:hidden">Không đc bỏ trống </div>
+                    </div>
+                    <div class="form-group has-info matkhau-color">
+                        <label style="font-weight:bold" for="matkhau" class="col-xs-12 col-sm-2 control-label no-padding-right">Mật khẩu</label>
+                        <div class="col-xs-12 col-sm-7">
+                            <span class="block input-icon input-icon-right">
+                                <input type="text" id="matkhau" name="matkhau" class="width-100" onkeydown="validate()" onblur="validate()">
+                                <i class="ace-icon fa fa-info-circle matkhau-ic"></i>
+                            </span>
+                        </div>
+                        <div class="help-block col-xs-12 col-sm-reset inline matkhau-text" style="visibility:hidden">Không đc bỏ trống </div>
+                    </div>
+                    <div class="form-group has-info trangthai-color">
+                        <label style="font-weight:bold" for="trangthai" class="col-xs-12 col-sm-2 control-label no-padding-right">Trạng thái</label>
+                        <div class="col-xs-12 col-sm-7">
+                            <span class="block input-icon input-icon-right">
+                                    <input id="trangthai" name="trangthai" class="ace ace-switch ace-switch-6" type="checkbox">
+                                    <span class="lbl"></span>
+                            </span>
+                        </div>
+                        <div class="help-block col-xs-12 col-sm-reset inline trangthai-text" style="visibility:hidden">Không đc bỏ trống </div>
+                    </div>
+                    <div class="form-group has-info chucvu-color">
+                        <label style="font-weight:bold" for="chucvu" class="col-xs-12 col-sm-2 control-label no-padding-right">Chức vụ</label>
+                        <div class="col-xs-12 col-sm-7">
+                            <select id="chucvu" class="form-control">
+                                @*<option value="1">Admin</option>
+                                <option value="2">Giảng viên</option>
+                                <option value="3" selected>Học viên</option>*@
+                            </select>
+                        </div>
+                        <div class="help-block col-xs-12 col-sm-reset inline chucvu-text" style="visibility:hidden">Không đc bỏ trống </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btn-process" class="btn btn-success btn-submit">Thêm</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Thoát</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

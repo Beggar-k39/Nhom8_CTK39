@@ -1,0 +1,125 @@
+﻿<div class="modal fade modal-add" id="modalcall" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Thêm khóa học</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" id="sample-form">
+
+                    <div class="form-group has-info tenkhoahoc-color">
+                        <label style="font-weight:bold" for="tenkhoahoc" class="col-xs-12 col-sm-2 control-label no-padding-right">Tên khóa học</label>
+
+                        <div class="col-xs-12 col-sm-7">
+                            <span class="block input-icon input-icon-right">
+                                <input type="text" id="tenkhoahoc" name="tenkhoahoc" class="width-100">
+                                <i class="ace-icon fa fa-info-circle tenkhoahoc-ic"></i>
+                            </span>
+                        </div>
+                        <div class="help-block col-xs-12 col-sm-reset inline tenkhoahoc-text" style="visibility:hidden">Không đc bỏ trống </div>
+                    </div>
+
+                    <div class="form-group has-info hocphi-color">
+                        <label style="font-weight:bold" for="hocphi" class="col-xs-12 col-sm-2 control-label no-padding-right">Học phí</label>
+                        <div class="col-xs-12 col-sm-7">
+                            <span class="block input-icon input-icon-right">
+                                <input type="text" id="hocphi" name="hocphi" class="width-100">
+                                <i class="ace-icon fa fa-info-circle hocphi-ic"></i>
+                            </span>
+                        </div>
+                        <div class="help-block col-xs-12 col-sm-reset inline hocphi-text" style="visibility:hidden">Không đc bỏ trống </div>
+                    </div>
+                    <div class="form-group has-info ngaybatdau-color">
+                        <label style="font-weight:bold" for="ngaybatdau" class="col-xs-12 col-sm-2 control-label no-padding-right">Ngày bắt đầu</label>
+                        <div class="col-xs-12 col-sm-7">
+                            <div class="input-group">
+                                <input class="form-control date-picker" id="ngaybatdau" type="text" data-date-format="dd-mm-yyyy">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-calendar bigger-110"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="help-block col-xs-12 col-sm-reset inline ngaybatdau-text" style="visibility:hidden">Không đc bỏ trống </div>
+                    </div>
+                    <div class="form-group has-info ngayketthuc-color">
+                        <label style="font-weight:bold" for="ngayketthuc" class="col-xs-12 col-sm-2 control-label no-padding-right">Ngày kết thúc</label>
+                        <div class="col-xs-12 col-sm-7">
+                            <div class="input-group">
+                                <input class="form-control date-picker" id="ngayketthuc" type="text" data-date-format="dd-mm-yyyy">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-calendar bigger-110"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="help-block col-xs-12 col-sm-reset inline ngaybatdau-text" style="visibility:hidden">Không đc bỏ trống </div>
+                    </div>
+                    <div class="form-group has-info lichhoc-color">
+                        <label style="font-weight:bold" for="lichhoc" class="col-xs-12 col-sm-2 control-label no-padding-right">Lịch học</label>
+                        <div class="col-xs-12 col-sm-7">
+                            <span class="block input-icon input-icon-right">
+                                <input type="text" id="lichhoc" name="lichhoc" class="width-100">
+                                <i class="ace-icon fa fa-info-circle lichhoc-ic"></i>
+                            </span>
+                        </div>
+                        <div class="help-block col-xs-12 col-sm-reset inline hocphi-text" style="visibility:hidden">Không đc bỏ trống </div>
+                    </div>
+                    <div class="form-group has-info trangthai-color">
+                        <label style="font-weight:bold" for="trangthai" class="col-xs-12 col-sm-2 control-label no-padding-right">Trạng thái</label>
+                        <div class="col-xs-12 col-sm-7">
+                            <input id="trangthai" name="switch-field-1" class="ace ace-switch ace-switch-6" type="checkbox">
+                            <span class="lbl"></span>
+                        </div>
+                        <div class="help-block col-xs-12 col-sm-reset inline trangthai-text" style="visibility:hidden">Không đc bỏ trống </div>
+                    </div>
+                    <div class="form-group has-info idlkh-color">
+                        <label style="font-weight:bold" for="idlkh" class="col-xs-12 col-sm-2 control-label no-padding-right">Loại khóa học</label>
+                        <div class="col-xs-12 col-sm-7">
+                            <select id="idlkh" class="form-control"> @* Load LoaiKhoaHoc *@
+                                @*<option value="1">Admin</option>
+                                    <option value="2">Giảng viên</option>
+                                    <option value="3" selected>Học viên</option>*@
+                            </select>
+                        </div>
+                        <div class="help-block col-xs-12 col-sm-reset inline idlkh-text" style="visibility:hidden">Không đc bỏ trống </div>
+                    </div>
+                    <div class="form-group has-info idgv-color">
+                        <label style="font-weight:bold" for="idgv" class="col-xs-12 col-sm-2 control-label no-padding-right">Giảng viên</label>
+                        <div class="col-xs-12 col-sm-7">
+                            <select id="idgv" class="form-control"> @* Load GiangVien *@
+
+                            </select>
+                        </div>
+                        <div class="help-block col-xs-12 col-sm-reset inline idgv-text" style="visibility:hidden">Không đc bỏ trống </div>
+
+                    </div>
+                    <div class="form-group has-info anh-color">
+                        <label style="font-weight:bold" for="anh" class="col-xs-12 col-sm-2 control-label no-padding-right">Ảnh</label>
+                        <div class="col-xs-12 col-sm-7">
+                            <div class="col-sm-6">
+                                <input type="file" id="file" name="file" onchange="readUrl(this)" />
+                            </div>
+                            <div>
+                                <img id="review-img" src="http://placehold.it/50" alt="your image" style="height:50px" />
+                            </div>
+
+                        </div>
+                        <div class="help-block col-xs-12 col-sm-reset inline anh-text" style="visibility:hidden">Không đc bỏ trống </div>
+
+                    </div>
+                    <div class="form-group has-info mota-color">
+                        <label style="font-weight:bold" for="mota" class="col-xs-12 col-sm-2 control-label no-padding-right">Mô tả</label>
+                        <div class="col-xs-12 col-sm-7">
+                            <textarea id="mota" name="mota"></textarea>
+                        </div>
+                        <div class="help-block col-xs-12 col-sm-reset inline mota-text" style="visibility:hidden">Không đc bỏ trống </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btn-process" class="btn btn-success btn-submit">Thêm</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Thoát</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

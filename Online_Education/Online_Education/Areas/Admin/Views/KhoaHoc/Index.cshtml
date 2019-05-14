@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Khóa học";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<h1 id="title" style="display:none">khoahoc</h1>
+<h2>Quản lý khóa học</h2>
+<div class="row">
+    <div class="col-xs-12">
+        <table id="myTable" class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Tên khóa học</th>
+                    <th>Mô tả</th>
+                    <th>Học phí</th>
+                    <th>Lịch học</th>
+                    <th>Trạng thái</th>
+                    <th class="control"></th>
+                </tr>
+            </thead>
+            <tbody id="dataTable"></tbody>
+        </table>
+    </div>
+</div>
+@RenderPage("Modal_Create_Update.cshtml")
+@RenderPage("Modal_Delete.cshtml")
+@section scripts{
+
+    <script>
+        CKEDITOR.replace('mota');
+        CKEDITOR.add;
+    </script>
+    <script src="~/Scripts/js_BackEnd/QL_KhoaHoc.js"></script>
+
+}
+

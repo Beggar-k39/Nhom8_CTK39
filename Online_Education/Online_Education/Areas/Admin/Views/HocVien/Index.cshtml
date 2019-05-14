@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Học viên";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<h1 id="title" style="display:none">hocvien</h1>
+<h2>Quản lý học viên</h2>
+<div class="row">
+    <div class="col-xs-12">
+        <table id="myTable" class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Họ tên</th>
+                    <th>Ngày sinh</th>
+                    <th>SDT</th>
+                    <th>Email</th>
+                    <th>Địa chỉ</th>
+                    <th>IDTaiKhoan</th>
+                    <th class="control"></th>
+                </tr>
+            </thead>
+            <tbody id="dataTable"></tbody>
+        </table>
+    </div>
+</div>
+@RenderPage("Modal_Create_Update.cshtml")
+@RenderPage("Modal_Delete.cshtml")
+@section scripts{
+    <script src="~/Scripts/js_BackEnd/QL_HocVien.js"></script>
+}
+
+
+
+

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="12da4b8b069a4eb7877065be1e58a26f" Name="Diagram1">
+        <EntityTypeShape EntityType="OnlineEducationModel.ChucVu" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="OnlineEducationModel.GopY" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="OnlineEducationModel.HocVien_KhoaHoc" Width="1.5" PointX="0.75" PointY="2.625" />
+        <EntityTypeShape EntityType="OnlineEducationModel.KhoaHoc" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="OnlineEducationModel.LoaiKhoaHoc" Width="1.5" PointX="7" PointY="4.5" />
+        <EntityTypeShape EntityType="OnlineEducationModel.TinTuc" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="OnlineEducationModel.HocVien" Width="1.5" PointX="4.75" PointY="3.5" />
+        <EntityTypeShape EntityType="OnlineEducationModel.GiangVien" Width="1.5" PointX="2.75" PointY="1.25" />
+        <EntityTypeShape EntityType="OnlineEducationModel.TaiKhoan" Width="1.5" PointX="0.75" PointY="5" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,145 @@
+﻿@using Online_Education.Areas.Admin.Models
+@{
+    ViewBag.Title = "Index  ";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Thông tin tài khoản</h2>
+@{
+    GiangVien gv = (GiangVien)ViewBag.GiangVien;
+}
+<div class="col-xs-12 col-sm-3 center">
+    <div>
+        <span class="profile-picture">
+            <img id="avatar" class="editable img-responsive editable-click editable-empty" alt="Alex's Avatar" src="~/HinhAnh/@gv.Anh">
+        </span>
+        <div class="space-4"></div>
+        <div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
+            <div class="inline position-relative">
+                <a href="#" class="user-title-label dropdown-toggle" data-toggle="dropdown">
+                    <i class="ace-icon fa fa-circle light-green"></i>
+                    &nbsp;
+                    <span class="white">@gv.HoTen_GV</span>
+                </a>
+                <ul class="align-left dropdown-menu dropdown-caret dropdown-lighter">
+                    <li class="dropdown-header"> Change Status </li>
+                    <li>
+                        <a href="#">
+                            <i class="ace-icon fa fa-circle green"></i>
+                            &nbsp;
+                            <span class="green">Available</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="ace-icon fa fa-circle red"></i>
+                            &nbsp;
+                            <span class="red">Busy</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="ace-icon fa fa-circle grey"></i>
+                            &nbsp;
+                            <span class="grey">Invisible</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="space-6"></div>
+    <div class="profile-contact-info">
+        <div class="profile-contact-links align-left">
+            <a href="#" class="btn btn-link">
+                <i class="ace-icon fa fa-plus-circle bigger-120 green"></i>
+                Add as a friend
+            </a>
+            <a href="#" class="btn btn-link">
+                <i class="ace-icon fa fa-envelope bigger-120 pink"></i>
+                Send a message
+            </a>
+            <a href="#" class="btn btn-link">
+                <i class="ace-icon fa fa-globe bigger-125 blue"></i>
+                www.alexdoe.com
+            </a>
+        </div>
+        <div class="space-6"></div>
+        <div class="profile-social-links align-center">
+            <a href="#" class="tooltip-info" title="" data-original-title="Visit my Facebook">
+                <i class="middle ace-icon fa fa-facebook-square fa-2x blue"></i>
+            </a>
+            <a href="#" class="tooltip-info" title="" data-original-title="Visit my Twitter">
+                <i class="middle ace-icon fa fa-twitter-square fa-2x light-blue"></i>
+            </a>
+            <a href="#" class="tooltip-error" title="" data-original-title="Visit my Pinterest">
+                <i class="middle ace-icon fa fa-pinterest-square fa-2x red"></i>
+            </a>
+        </div>
+    </div>
+    <div class="hr hr12 dotted"></div>
+</div>
+<div class="col-xs-12 col-sm-9">
+    @using (Html.BeginForm("SuaThongTin", "Info", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+    {
+
+        <div class="control pull-right" style="padding-right:13px;font-size:0">
+            <button class="btn btn-success" type="submit">Lưu thay đổi</button>
+            <button class="btn btn-danger">Hủy</button>
+        </div>
+        <div class="space-12"></div>
+        <div class="profile-user-info profile-user-info-striped">
+            <div class="profile-info-row" style="display:none">
+                <div class="profile-info-name">IDTaiKhoan</div>
+                <input type="text" id="idtk" name="idtk" class="width-100" value="@gv.IDTaiKhoan">
+            </div>
+            <div class="profile-info-row">
+                <div class="profile-info-name">Họ tên</div>
+                <input type="text" id="hotengv" name="hotengv" class="width-100" value="@gv.HoTen_GV">
+            </div>
+            <div class="profile-info-row">
+                <div class="profile-info-name"> Ngày sinh </div>
+                <input class="form-control date-picker" id="ngaysinh" name="ngaysinh" type="text" data-date-format="dd-mm-yyyy" value="@gv.NgaySinh">
+            </div>
+            <div class="profile-info-row">
+                <div class="profile-info-name"> Số điện thoại </div>
+                <input type="text" id="sdt" name="sdt" class="width-100" value="@gv.SDT">
+            </div>
+            <div class="profile-info-row">
+                <div class="profile-info-name"> Email </div>
+                <input type="text" id="email" name="email" class="width-100" value="@gv.Email">
+            </div>
+            <div class="profile-info-row">
+                <div class="profile-info-name"> Địa chỉ </div>
+                <input type="text" id="diachi" name="diachi" class="width-100" value="@gv.DiaChi">
+            </div>
+            <div class="profile-info-row">
+                <div class="profile-info-name"> Mô tả </div>
+                <textarea id="mota1" name="mota1">@gv.MoTa</textarea>
+            </div>
+            <input type="file" id="file" name="file" style="display: none;" onchange="readUrl(this)" />
+        </div>
+        <div class="space-20"></div>
+    }
+</div>
+@section scripts{
+    <script>
+        $('#avatar').click(function () {
+            $("#file").click();
+        });
+        function readUrl(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#avatar').attr('src', e.target.result);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        CKEDITOR.replace('mota1');
+        CKEDITOR.add;
+    </script>
+}
+
+

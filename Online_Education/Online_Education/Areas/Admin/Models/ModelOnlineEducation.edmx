@@ -1,0 +1,395 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="OnlineEducationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ChucVu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenChucVu" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="GiangVien">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HoTen_GV" Type="nvarchar" MaxLength="50" />
+          <Property Name="NgaySinh" Type="nvarchar" MaxLength="10" />
+          <Property Name="Anh" Type="nvarchar" MaxLength="200" />
+          <Property Name="SDT" Type="nvarchar" MaxLength="15" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="DiaChi" Type="nvarchar" MaxLength="50" />
+          <Property Name="MoTa" Type="nvarchar(max)" />
+          <Property Name="SoGioGiang" Type="int" />
+          <Property Name="Luong" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="IDTaiKhoan" Type="int" />
+        </EntityType>
+        <EntityType Name="GopY">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HoTen" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="ChuDe" Type="nvarchar" MaxLength="50" />
+          <Property Name="SDT" Type="nvarchar" MaxLength="15" />
+          <Property Name="NoiDung" Type="nvarchar(max)" />
+          <Property Name="NgayNhan" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="HocVien">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HoTen" Type="nvarchar" MaxLength="50" />
+          <Property Name="NgaySinh" Type="nvarchar" MaxLength="10" />
+          <Property Name="SDT" Type="nvarchar" MaxLength="15" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="DiaChi" Type="nvarchar" MaxLength="50" />
+          <Property Name="IDTaiKhoan" Type="int" />
+        </EntityType>
+        <EntityType Name="HocVien_KhoaHoc">
+          <Key>
+            <PropertyRef Name="IDKhoaHoc" />
+            <PropertyRef Name="IDHocVien" />
+          </Key>
+          <Property Name="IDKhoaHoc" Type="int" Nullable="false" />
+          <Property Name="IDHocVien" Type="int" Nullable="false" />
+          <Property Name="NgayDangKy" Type="nvarchar" MaxLength="10" />
+          <Property Name="ChuyenCan" Type="int" />
+          <Property Name="DiemDanhGia" Type="real" />
+          <Property Name="ThanhToan" Type="bit" />
+        </EntityType>
+        <EntityType Name="KhoaHoc">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenKhoaHoc" Type="nvarchar" MaxLength="200" />
+          <Property Name="MoTa" Type="nvarchar(max)" />
+          <Property Name="Anh" Type="nvarchar" MaxLength="200" />
+          <Property Name="HocPhi" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="ThoiGianBatDau" Type="nvarchar" MaxLength="10" />
+          <Property Name="ThoiGianKetThuc" Type="nvarchar" MaxLength="10" />
+          <Property Name="LichHoc" Type="nvarchar(max)" />
+          <Property Name="TrangThai" Type="bit" />
+          <Property Name="MetaTitle" Type="nvarchar" MaxLength="200" />
+          <Property Name="IDLoaiKhoaHoc" Type="int" />
+          <Property Name="IDGiangVien" Type="int" />
+        </EntityType>
+        <EntityType Name="LoaiKhoaHoc">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenLoaiKhoaHoc" Type="nvarchar" MaxLength="50" />
+          <Property Name="MoTa" Type="nvarchar(max)" />
+          <Property Name="MetaTitle" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="TaiKhoan">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenDangNhap" Type="nvarchar" MaxLength="50" />
+          <Property Name="MatKhau" Type="nvarchar" MaxLength="200" />
+          <Property Name="NgayTao" Type="nvarchar" MaxLength="10" />
+          <Property Name="TrangThai" Type="bit" />
+          <Property Name="IDChucVu" Type="int" />
+        </EntityType>
+        <EntityType Name="TinTuc">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TieuDe" Type="nvarchar(max)" />
+          <Property Name="TomTat" Type="nvarchar(max)" />
+          <Property Name="NoiDung" Type="nvarchar(max)" />
+          <Property Name="TrangThai" Type="bit" />
+          <Property Name="MetaTitle" Type="nvarchar" MaxLength="200" />
+          <Property Name="IDTaiKhoan" Type="int" />
+        </EntityType>
+        <EntityContainer Name="OnlineEducationModelStoreContainer">
+          <EntitySet Name="ChucVu" EntityType="Self.ChucVu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GiangVien" EntityType="Self.GiangVien" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GopY" EntityType="Self.GopY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HocVien" EntityType="Self.HocVien" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HocVien_KhoaHoc" EntityType="Self.HocVien_KhoaHoc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KhoaHoc" EntityType="Self.KhoaHoc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LoaiKhoaHoc" EntityType="Self.LoaiKhoaHoc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TaiKhoan" EntityType="Self.TaiKhoan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TinTuc" EntityType="Self.TinTuc" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OnlineEducationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="OnlineEducationEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ChucVus" EntityType="OnlineEducationModel.ChucVu" />
+          <EntitySet Name="Gopies" EntityType="OnlineEducationModel.GopY" />
+          <EntitySet Name="HocVien_KhoaHoc" EntityType="OnlineEducationModel.HocVien_KhoaHoc" />
+          <EntitySet Name="KhoaHocs" EntityType="OnlineEducationModel.KhoaHoc" />
+          <EntitySet Name="LoaiKhoaHocs" EntityType="OnlineEducationModel.LoaiKhoaHoc" />
+          <EntitySet Name="TinTucs" EntityType="OnlineEducationModel.TinTuc" />
+          <EntitySet Name="HocViens" EntityType="OnlineEducationModel.HocVien" />
+          <EntitySet Name="GiangViens" EntityType="OnlineEducationModel.GiangVien" />
+          <EntitySet Name="TaiKhoans" EntityType="OnlineEducationModel.TaiKhoan" />
+        </EntityContainer>
+        <EntityType Name="ChucVu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenChucVu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GopY">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HoTen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ChuDe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SDT" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NgayNhan" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="HocVien_KhoaHoc">
+          <Key>
+            <PropertyRef Name="IDKhoaHoc" />
+            <PropertyRef Name="IDHocVien" />
+          </Key>
+          <Property Name="IDKhoaHoc" Type="Int32" Nullable="false" />
+          <Property Name="IDHocVien" Type="Int32" Nullable="false" />
+          <Property Name="NgayDangKy" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ChuyenCan" Type="Int32" />
+          <Property Name="DiemDanhGia" Type="Single" />
+          <Property Name="ThanhToan" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="KhoaHoc">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenKhoaHoc" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Anh" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="HocPhi" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ThoiGianBatDau" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ThoiGianKetThuc" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="LichHoc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TrangThai" Type="Boolean" />
+          <Property Name="MetaTitle" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="IDLoaiKhoaHoc" Type="Int32" />
+          <Property Name="IDGiangVien" Type="Int32" />
+        </EntityType>
+        <EntityType Name="LoaiKhoaHoc">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenLoaiKhoaHoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MetaTitle" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TinTuc">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TieuDe" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TomTat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TrangThai" Type="Boolean" />
+          <Property Name="MetaTitle" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="IDTaiKhoan" Type="Int32" />
+        </EntityType>
+        <EntityType Name="HocVien">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HoTen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NgaySinh" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="SDT" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IDTaiKhoan" Type="Int32" />
+        </EntityType>
+        <EntityType Name="GiangVien">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HoTen_GV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NgaySinh" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Anh" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SDT" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SoGioGiang" Type="Int32" />
+          <Property Name="Luong" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="IDTaiKhoan" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TaiKhoan">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenDangNhap" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MatKhau" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="NgayTao" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="TrangThai" Type="Boolean" />
+          <Property Name="IDChucVu" Type="Int32" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OnlineEducationModelStoreContainer" CdmEntityContainer="OnlineEducationEntities">
+          <EntitySetMapping Name="ChucVus">
+            <EntityTypeMapping TypeName="OnlineEducationModel.ChucVu">
+              <MappingFragment StoreEntitySet="ChucVu">
+                <ScalarProperty Name="TenChucVu" ColumnName="TenChucVu" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Gopies">
+            <EntityTypeMapping TypeName="OnlineEducationModel.GopY">
+              <MappingFragment StoreEntitySet="GopY">
+                <ScalarProperty Name="NgayNhan" ColumnName="NgayNhan" />
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="ChuDe" ColumnName="ChuDe" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HocVien_KhoaHoc">
+            <EntityTypeMapping TypeName="OnlineEducationModel.HocVien_KhoaHoc">
+              <MappingFragment StoreEntitySet="HocVien_KhoaHoc">
+                <ScalarProperty Name="ThanhToan" ColumnName="ThanhToan" />
+                <ScalarProperty Name="DiemDanhGia" ColumnName="DiemDanhGia" />
+                <ScalarProperty Name="ChuyenCan" ColumnName="ChuyenCan" />
+                <ScalarProperty Name="NgayDangKy" ColumnName="NgayDangKy" />
+                <ScalarProperty Name="IDHocVien" ColumnName="IDHocVien" />
+                <ScalarProperty Name="IDKhoaHoc" ColumnName="IDKhoaHoc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KhoaHocs">
+            <EntityTypeMapping TypeName="OnlineEducationModel.KhoaHoc">
+              <MappingFragment StoreEntitySet="KhoaHoc">
+                <ScalarProperty Name="IDGiangVien" ColumnName="IDGiangVien" />
+                <ScalarProperty Name="IDLoaiKhoaHoc" ColumnName="IDLoaiKhoaHoc" />
+                <ScalarProperty Name="MetaTitle" ColumnName="MetaTitle" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+                <ScalarProperty Name="LichHoc" ColumnName="LichHoc" />
+                <ScalarProperty Name="ThoiGianKetThuc" ColumnName="ThoiGianKetThuc" />
+                <ScalarProperty Name="ThoiGianBatDau" ColumnName="ThoiGianBatDau" />
+                <ScalarProperty Name="HocPhi" ColumnName="HocPhi" />
+                <ScalarProperty Name="Anh" ColumnName="Anh" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+                <ScalarProperty Name="TenKhoaHoc" ColumnName="TenKhoaHoc" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoaiKhoaHocs">
+            <EntityTypeMapping TypeName="OnlineEducationModel.LoaiKhoaHoc">
+              <MappingFragment StoreEntitySet="LoaiKhoaHoc">
+                <ScalarProperty Name="MetaTitle" ColumnName="MetaTitle" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+                <ScalarProperty Name="TenLoaiKhoaHoc" ColumnName="TenLoaiKhoaHoc" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TinTucs">
+            <EntityTypeMapping TypeName="OnlineEducationModel.TinTuc">
+              <MappingFragment StoreEntitySet="TinTuc">
+                <ScalarProperty Name="IDTaiKhoan" ColumnName="IDTaiKhoan" />
+                <ScalarProperty Name="MetaTitle" ColumnName="MetaTitle" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+                <ScalarProperty Name="TomTat" ColumnName="TomTat" />
+                <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HocViens">
+            <EntityTypeMapping TypeName="OnlineEducationModel.HocVien">
+              <MappingFragment StoreEntitySet="HocVien">
+                <ScalarProperty Name="IDTaiKhoan" ColumnName="IDTaiKhoan" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GiangViens">
+            <EntityTypeMapping TypeName="OnlineEducationModel.GiangVien">
+              <MappingFragment StoreEntitySet="GiangVien">
+                <ScalarProperty Name="IDTaiKhoan" ColumnName="IDTaiKhoan" />
+                <ScalarProperty Name="Luong" ColumnName="Luong" />
+                <ScalarProperty Name="SoGioGiang" ColumnName="SoGioGiang" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="Anh" ColumnName="Anh" />
+                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="HoTen_GV" ColumnName="HoTen_GV" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TaiKhoans">
+            <EntityTypeMapping TypeName="OnlineEducationModel.TaiKhoan">
+              <MappingFragment StoreEntitySet="TaiKhoan">
+                <ScalarProperty Name="IDChucVu" ColumnName="IDChucVu" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+                <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+                <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+                <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
