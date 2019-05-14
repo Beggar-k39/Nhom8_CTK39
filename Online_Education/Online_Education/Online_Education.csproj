@@ -181,6 +181,7 @@
       <DependentUpon>ModelOnlineEducation.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KhoahocController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -414,6 +415,7 @@
     <Content Include="Content\Front_End\my_images\asp_net.png" />
     <Content Include="Content\Front_End\my_images\banner1.jpg" />
     <Content Include="Content\Front_End\my_images\bootstrap-logo.png" />
+    <Content Include="Content\Front_End\my_images\c-sharp-banner.jpg" />
     <Content Include="Content\Front_End\my_images\csharp-logo.png" />
     <Content Include="Content\Front_End\my_images\dalat-bg.jpg" />
     <Content Include="Content\Front_End\my_images\dalat-bg1.jpg" />
@@ -427,6 +429,7 @@
     <Content Include="Content\Front_End\my_images\nodejs-logo.png" />
     <Content Include="Content\Front_End\my_images\react-logo.png" />
     <Content Include="Content\Front_End\my_images\thai.jpg" />
+    <Content Include="Content\Front_End\my_images\thanhha.jpg" />
     <Content Include="Content\Front_End\my_images\truong1.jpg" />
     <Content Include="Content\Front_End\my_images\truong2.jpg" />
     <Content Include="Content\Front_End\my_images\truong3.jpg" />
@@ -814,6 +817,8 @@
     <Content Include="Views\Login\ForgotPassWord.cshtml" />
     <Content Include="Views\Login\ChangePassWord.cshtml" />
     <Content Include="Views\Login\Verify.cshtml" />
+    <Content Include="Views\Khoahoc\CourseDetail.cshtml" />
+    <Content Include="Views\Shared\_LayoutCourse.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
