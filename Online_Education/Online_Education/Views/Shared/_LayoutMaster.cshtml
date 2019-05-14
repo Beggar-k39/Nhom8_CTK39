@@ -396,10 +396,10 @@
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
     <link href="~/Content/nivo-slider/nivo-slider.css" rel="stylesheet" />
     <script src="~/Content/nivo-slider/jquery.nivo.slider.pack.js"></script>
-    <script type="text/javascript">
 
-           <!--    jQuery library-- >
-            <script src="~/Content/js/jquery.min.js"></script>
+
+    <!--jQuery library -->
+    <script src="~/Content/js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="~/Content/js/bootstrap.js"></script>
     <!-- Slick slider -->
@@ -415,24 +415,25 @@
 
     <!-- Custom js -->
     <script src="~/Content/Front_End/js/custom.js"></script>
-    $(window).on('load', function () {
-    $('#slider').nivoSlider(
-    {
-    controlNav: false,
-    directionNav: false,
-    pauseTime: 3000,
-    pauseOnHover: false,
-    });
+    <script type="text/javascript">
+        $(window).on('load', function () {
+            $('#slider').nivoSlider(
+                {
+                    controlNav: false,
+                    directionNav: false,
+                    pauseTime: 3000,
+                    pauseOnHover: false,
+                });
 
-    //alert($('#title').text());
-    // Active Menu
-    var x = $('#title').text();
-    var str = "#" + x;
-    var str1 = str + "1";
-    $(str).addClass('text-wh');
-    $(str1).addClass('text-wh');
-    // End Active Menu
-    });
+            //alert($('#title').text());
+            // Active Menu
+            var x = $('#title').text();
+            var str = "#" + x;
+            var str1 = str + "1";
+            $(str).addClass('text-wh');
+            $(str1).addClass('text-wh');
+            // End Active Menu
+        });
     </script>
     @RenderSection("script", required: false)
     <!-- // End Script Custom Group 8-->
