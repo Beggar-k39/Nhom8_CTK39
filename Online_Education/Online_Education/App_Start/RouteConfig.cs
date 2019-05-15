@@ -11,6 +11,14 @@ namespace Online_Education
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
+
+            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.MapRoute(
+            name: "CourseDetail",
+            url: "khoa-hoc/{MetaTitle}-{cateId}",
+            defaults: new { controller = "Course", action = "CourseDetail", id = UrlParameter.Optional }
+        );
+
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(

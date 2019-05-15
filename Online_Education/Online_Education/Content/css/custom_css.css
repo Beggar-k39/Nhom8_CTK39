@@ -1,0 +1,115 @@
+﻿html {
+    margin-top: 5%;
+}
+
+.main-top {
+    background-color: #118011;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    transition: 0.4s;
+    padding:0px 10px;
+}
+
+.menu li a {
+    font-weight: bold;
+}
+
+.menu-hide {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.short-ul {
+    margin-top: 0.5em !important;
+}
+
+.short-menu {
+    background-color: #228b22c9;
+    transition: 0.4s;
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 19;
+}
+
+.short-menu-show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.a:active {
+    color: white;
+}
+
+.bg-colors {
+    background-color: forestgreen !important;
+}
+
+.feedback-top {
+    background-color: #0000008f;
+    padding: 10px;
+    border-radius: 20px 20px;
+}
+
+.sticky-left {
+    position:fixed;
+    left:0;
+    top:262px;
+    width: 60px;
+    height: auto;
+    background-color: forestgreen;
+    z-index:100;
+    visibility:hidden;
+    opacity:0;
+    border-radius:0 20px 20px 0;
+    transition:2s;
+}
+.sticky-left-show {
+    visibility: visible;
+    opacity: 0.9;
+}
+.sticky-left li {
+    box-sizing: border-box;
+    background-color: forestgreen;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.sticky-left li a {
+    color: white;
+    display: block;
+}
+
+.sticky-left li a:hover {
+    color: red;
+    display: block;
+}
+
+.sticky-left li a .fa-fb:before {
+    padding: 10px;
+}
+#slider img {
+    object-fit: cover;
+}
+li.dn {
+    display: none;
+    color:white;
+
+}
+li.dn a {
+    color: white;
+}
+
+li.dk {
+    display: none;
+
+}
+li.dk a{
+    color:red;
+}

@@ -1,0 +1,24 @@
+﻿@model List<Online_Education.Areas.Admin.Models.KhoaHoc>
+@foreach (var item in Model)
+{
+    <div class="col-md-6">
+        <div class="mu-latest-course-single">
+            <figure class="mu-latest-course-img">
+                <a href="/khoa-hoc/@item.MetaTitle-@item.ID"><img alt="img" src="@Url.Content("~/HinhAnh/"+item.Anh)" style="height:200px"></a>
+                <figcaption class="mu-latest-course-imgcaption">
+                    <a href="#">@item.TenKhoaHoc</a>
+                    <span><i class="fa fa-clock-o"></i>90Days</span>
+                </figcaption>
+            </figure>
+            <div class="mu-latest-course-single-content">
+                <h4><a href="/khoa-hoc/@item.MetaTitle-@item.ID">@item.LichHoc</a></h4>
+                <p>Học - Học Nữa - Học Mãi</p>
+                <div class="mu-latest-course-single-contbottom">
+                    <a href="/khoa-hoc/@item.MetaTitle-@item.ID" class="mu-course-details">Chi tiết</a>
+                    <span href="/khoa-hoc/@item.MetaTitle-@item.ID" class="mu-course-price">$ @item.HocPhi Đồng</span>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

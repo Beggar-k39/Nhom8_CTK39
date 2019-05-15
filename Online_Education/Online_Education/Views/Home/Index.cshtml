@@ -1,70 +1,267 @@
-﻿
+﻿@model List<Online_Education.Areas.Admin.Models.TinTuc>
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutMaster.cshtml";
 }
-<h1 id="title" style="display:none">@ViewBag.Title</h1>
-@section NivoSlider{
-    <div class="banner_w3lspvt">
-        <div class="nivo">
-            <div id="slider" class="nivoSlider">
-                <img src="~/Content/Front_End/my_images/truong4.jpg" class="img-fluid" />
-                <img src="~/Content/Front_End/my_images/truong2.jpg" class="img-fluid" />
-                <img src="~/Content/Front_End/my_images/truong3.jpg" class="img-fluid" />
 
+<h1 id="title" style="display:none">@ViewBag.Title</h1>
+
+@section Slider{
+    <!-- Start Slider -->
+    <section id="mu-slider">
+        <!-- Start single slider item -->
+        @foreach (var item in Model)
+        {
+            <div class="mu-slider-single">
+                <div class="mu-slider-img" style="height:600px">
+                    <figure>
+                        <img src="~/Content/my_images/truong1.jpg" alt="img">
+                    </figure>
+                </div>
+                <div class="mu-slider-content">
+                    <h4>@item.TieuDe</h4>
+                    <span></span>
+                    <h2>Chúng tôi sẽ giúp bạn học</h2>
+                    <p>@item.NoiDung</p>
+                    <a href="#" class="mu-read-more-btn">Đọc thêm</a>
+                </div>
             </div>
+        }
+
+
+    </section>
+    <!-- End Slider -->}
+@section Service{
+    <!-- Start service  -->
+    <section id="mu-service">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="mu-service-area">
+                        <!-- Start single service -->
+                        <div class="mu-service-single">
+                            <span class="fa fa-book"></span>
+                            <h3>Đăng ký trực tuyến</h3>
+                            <p>Cho phép học viên đăng kí khóa học trực tuyến</p>
+                        </div>
+                        <!-- Start single service -->
+                        <!-- Start single service -->
+                        <div class="mu-service-single">
+                            <span class="fa fa-users"></span>
+                            <h3>Giảng viên chuyên nghiệp</h3>
+                            <p>Được đào tạo bài bản và giàu kinh nghiệm</p>
+
+                        </div>
+                        <!-- Start single service -->
+                        <!-- Start single service -->
+                        <div class="mu-service-single">
+                            <span class="fa fa-table"></span>
+                            <h3>Chương trình học mới</h3>
+                            <p>Chương trình học luôn được cập nhật</p>
+                        </div>
+                        <!-- Start single service -->
+                    </div>
+                </div>
+            </div>
+     
         </div>
-    </div>
+    </section>
+    <!-- End service  -->
 }
-@section bottom_grids{
-    <section class="about-bottom" id="services">
-        <div class="container pb-lg-4">
-            <div class="row bg-colors text-center">
-                <div class="col-md-4 service-subgrids">
-                    <div class="w3ls-about-grid py-lg-5 py-md-4 py-5 px-3">
-                        <h4 class="text-wh font-weight-bold mb-3">Hội thảo nhóm</h4>
-                        <p class="text-li">Được tham gia hội thảo cùng giảng viên và tạo lập nhóm</p>
+@section About{
+    <!-- Start about us -->
+    <section id="mu-about-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mu-about-us-area">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <div class="mu-about-us-left">
+                                    <!-- Start Title -->
+                                    <div class="mu-title">
+                                        <h2>Giới thiệu</h2>
+                                    </div>
+                                    <!-- End Title -->
+                                    <p>Đến đây với chúng tôi các bạn sẽ học được mọi thứ từ cách hack Facebook crush cho đến report không thương tiếc những trang bạn ghét :)))</p>
+                                    <ul>
+                                        <li>Đào tạo: Tổ chức các khóa học ngắn hạn, đào tạo chuyển giao công nghệ thuộc lĩnh vực Công nghệ Thông tin </li>
+                                        <li>Dịch vụ: Thực hiện các dịch vụ nghiên cứu, ứng dụng, tư vấn, đánh giá, thẩm định về khoa học công nghệ trong các lĩnh vực Công nghệ Thông tin.</li>
+                                        <li>Bảo hộ quyền Sở hữu trí tuệ: Thực hiện bảo hộ quyền sở hữu trí tuệ đối với những sản phẩm khoa học của Trung tâm nghiên cứu và đầu tư.</li>
+                                        <li>Chuyển giao công nghệ: Chuyển giao công nghệ từ các sản phẩm nghiên cứu thuộc lĩnh vực Công nghệ Thông tin Địa lý </li>
+                                        <li>
+                                            Hợp tác với các tổ chức và các nhà khoa học trong và ngoài nước trong các lĩnh vực Khoa học thông tin địa lý, Viễn thám, Môi trường,…
+                                        </li>
+                                    </ul>
+                                    <p>Mọi thông tin chi tiết xin liện hệ đến vời YASSUO SĐT 033696969</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="mu-about-us-right">
+                                    <a id="mu-abtus-video" href="https://www.youtube.com/watch?v=m_yHWtfLhgc" target="mutube-video">
+                                        <img src="~/Content/my_images/truong2.jpg" alt="img">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <span class="fa fa-users" aria-hidden="true"></span>
-                </div>
-                <div class="col-md-4 service-subgrids bg-li">
-                    <div class="w3ls-about-grid py-lg-5 py-md-4 py-5 px-3">
-                        <h4 class="text-bl font-weight-bold mb-3">Đối tượng</h4>
-                        <p class="text-secondary"> Các khóa học hướng đến các đối tượng sinh viên, học sinh</p>
-                    </div>
-                    <span class="fa fa-linode" aria-hidden="true"></span>
-                </div>
-                <div class="col-md-4 service-subgrids">
-                    <div class="w3ls-about-grid py-lg-5 py-md-4 py-5 px-3">
-                        <h4 class="text-wh font-weight-bold mb-3">Tài nguyên lớn</h4>
-                        <p class="text-li">Học viên được cung cấp đầy đủ tài liệu để nghiên cứu</p>
-                    </div>
-                    <span class="fa fa-book" aria-hidden="true"></span>
-                </div>
-            </div>
-            <div class="row bg-colors text-center">
-                <div class="col-md-4 service-subgrids bg-li">
-                    <div class="w3ls-about-grid py-lg-5 py-md-4 py-5 px-3">
-                        <h4 class="text-bl font-weight-bold mb-3">Đăng kí trực tuyến</h4>
-                        <p class="text-secondary">Cho phép học viên đăng kí khóa học trực tuyến</p>
-                    </div>
-                    <span class="fa fa-laptop" aria-hidden="true"></span>
-                </div>
-                <div class="col-md-4 service-subgrids">
-                    <div class="w3ls-about-grid py-lg-5 py-md-4 py-5 px-3">
-                        <h4 class="text-wh font-weight-bold mb-3">Giảng viên chuyên nghiệp</h4>
-                        <p class="text-li">Được đào tạo bài bản và giàu kinh nghiệm</p>
-                    </div>
-                    <span class="fa fa-thumbs-o-up" aria-hidden="true"></span>
-                </div>
-                <div class="col-md-4 service-subgrids bg-li">
-                    <div class="w3ls-about-grid py-lg-5 py-md-4 py-5 px-3">
-                        <h4 class="text-bl font-weight-bold mb-3">Chương trình học mới</h4>
-                        <p class="text-secondary">Chương trình học luôn được cập nhật để phù hợp với xu hướng</p>
-                    </div>
-                    <span class="fa fa-magic" aria-hidden="true"></span>
                 </div>
             </div>
         </div>
     </section>
+    <!-- End about us -->
+}
+@section Counter{
+    <!-- Start about us counter -->
+    <section id="mu-abtus-counter" style="background-image:url('../../Content/my_images/phong hoc2.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mu-abtus-counter-area">
+                        <div class="row">
+                            <!-- Start counter item -->
+                            <div class="col-lg-3 col-md-3 col-sm-3">
+                                <div class="mu-abtus-counter-single">
+                                    <span class="fa fa-book"></span>
+                                    <h4 class="counter">100</h4>
+                                    <p>Số lượng khóa học</p>
+                                </div>
+                            </div>
+                            <!-- End counter item -->
+                            <!-- Start counter item -->
+                            <div class="col-lg-3 col-md-3 col-sm-3">
+                                <div class="mu-abtus-counter-single">
+                                    <span class="fa fa-users"></span>
+                                    <h4 class="counter">9999</h4>
+                                    <p>Học sinh</p>
+                                </div>
+                            </div>
+                            <!-- End counter item -->
+                            <!-- Start counter item -->
+                            <div class="col-lg-3 col-md-3 col-sm-3">
+                                <div class="mu-abtus-counter-single">
+                                    <span class="fa fa-flask"></span>
+                                    <h4 class="counter">10</h4>
+                                    <p>Phòng</p>
+                                </div>
+                            </div>
+                            <!-- End counter item -->
+                            <!-- Start counter item -->
+                            <div class="col-lg-3 col-md-3 col-sm-3">
+                                <div class="mu-abtus-counter-single no-border">
+                                    <span class="fa fa-user-secret"></span>
+                                    <h4 class="counter">4</h4>
+                                    <p>Giảng viên</p>
+                                </div>
+                            </div>
+                            <!-- End counter item -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End about us counter -->}
+@section Features{
+    <!-- Start features section -->
+    <section id="mu-features">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="mu-features-area">
+                        <!-- Start Title -->
+                        <div class="mu-title">
+                            <h2>Tính Năng</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio ipsa ea maxime mollitia, vitae voluptates, quod at, saepe reprehenderit totam aliquam architecto fugiat sunt animi!</p>
+                        </div>
+                        <!-- End Title -->
+                        <!-- Start features content -->
+                        <div class="mu-features-content">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4  col-sm-6">
+                                    <div class="mu-single-feature">
+                                        <span class="fa fa-book"></span>
+                                        <h4>Những khóa học nâng cao</h4>
+                                        <p>Học viên được cung cấp đầy đủ tài liệu để nghiên cứu</p>
+                                        <a href="#">Đọc thêm</a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-6">
+                                    <div class="mu-single-feature">
+                                        <span class="fa fa-users"></span>
+                                        <h4>Giảng viên nước ngoài</h4>
+                                        <p>Những giảng viên nước ngoài chuyên nghiệp, giao lưu với những người nổi tiếng</p>
+                                        <a href="#">Đọc thêm</a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-6">
+                                    <div class="mu-single-feature">
+                                        <span class="fa fa-laptop"></span>
+                                        <h4>Học trực tuyến</h4>
+                                        <p>Giành cho những bạn không thuận lợi trong việc đi lại</p>
+                                        <a href="#">Đọc thêm</a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-6">
+                                    <div class="mu-single-feature">
+                                        <span class="fa fa-microphone"></span>
+                                        <h4>Trao đổi trực tiếp</h4>
+                                        <p>Được tham gia hội thảo cùng giảng viên và tạo lập nhóm</p>
+                                        <a href="#">Đọc thêm</a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-6">
+                                    <div class="mu-single-feature">
+                                        <span class="fa fa-film"></span>
+                                        <h4>Học qua video</h4>
+                                        <p>Không có thời gian học đã có những video được lưu lại khi cần</p>
+                                        <a href="#">Đọc thêm</a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-6">
+                                    <div class="mu-single-feature">
+                                        <span class="fa fa-certificate"></span>
+                                        <h4>Giấy chứng nhận</h4>
+                                        <p>Đước các giấy chứng nhận bằng tương đương quốc tế</p>
+                                        <a href="#">Đọc thêm</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End features content -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End features section -->
+}
+@section Course{
+    <!-- Start latest course section -->
+    <section id="mu-latest-courses">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="mu-latest-courses-area">
+                        <!-- Start Title -->
+                        <div class="mu-title">
+                            <h2>Khóa học</h2>
+                            <p>Với trang thiết bị tiên tiến cũng những giảng viên chuyên nghiệp sẽ giúp bạn trở hiểu nhanh về các ngôn ngữ lập trình</p>
+                        </div>
+                        <!-- End Title -->
+                        <!-- Start latest course content -->
+                        <div id="mu-latest-course-slide" class="mu-latest-courses-content">
+
+
+                            @{ Html.RenderAction("CourseGanNhat", "Course");}
+                           
+                        </div>
+                        <!-- End latest course content -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End latest course section -->
 }

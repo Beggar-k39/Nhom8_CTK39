@@ -89,7 +89,7 @@ namespace Online_Education.Controllers
                 return View("Index");
             }
             string matkhauhash = GetHashString(mk);
-            TaiKhoan taikhoan = db.TaiKhoans.SingleOrDefault(z => z.TenDangNhap == tk && z.MatKhau == matkhauhash && z.IDChucVu != 3 && z.TrangThai == true);
+            TaiKhoan taikhoan = db.TaiKhoans.SingleOrDefault(z => z.TenDangNhap == tk && z.MatKhau == matkhauhash && z.TrangThai == true);
             if (taikhoan != null)
             {
                 Session["TaiKhoan"] = taikhoan;
@@ -100,15 +100,28 @@ namespace Online_Education.Controllers
                     ten = db.GiangViens.SingleOrDefault(z => z.IDTaiKhoan == taikhoan.ID).HoTen_GV;
                     hinh = db.GiangViens.SingleOrDefault(z => z.IDTaiKhoan == taikhoan.ID).Anh;
                     Session["Anh"] = hinh;
+                    Session["IDChucVu"] = taikhoan.IDChucVu;
+                    FormsAuthentication.SetAuthCookie(ten, false);
+                    return RedirectToAction("Index", "Home");
                 }
-                else
+                else if (taikhoan.IDChucVu == 3)
                 {
                     ten = taikhoan.TenDangNhap;
                     Session["Anh"] = "Admin";
+                    Session["IDChucVu"] = taikhoan.IDChucVu;
+                    FormsAuthentication.SetAuthCookie(ten, false);
+                    return RedirectToAction("Index", "Home");
                 }
-                Session["IDChucVu"] = taikhoan.IDChucVu;
-                FormsAuthentication.SetAuthCookie(ten, false);
-                return RedirectToAction("Index", "Home", new { area = "Admin" });
+
+                  else
+                {
+                    ten = taikhoan.TenDangNhap;
+                    Session["Anh"] = "Admin";
+                    Session["IDChucVu"] = taikhoan.IDChucVu;
+                    FormsAuthentication.SetAuthCookie(ten, false);
+                    return RedirectToAction("Index", "Home");
+                }
+               
             }
             else
             {

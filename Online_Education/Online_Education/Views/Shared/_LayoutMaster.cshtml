@@ -1,186 +1,219 @@
-﻿<!DOCTYPE html>
+﻿
+
+
+<!DOCTYPE html>
 
 <html>
 <head>
-    <!-- Meta tag Keywords -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8" />
-    <meta name="keywords" content="Studies Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-    <script>
-        addEventListener("load", function () {
-            setTimeout(hideURLbar, 0);
-        }, false);
+    <title>@ViewBag.Title</title>
 
-        function hideURLbar() {
-            window.scrollTo(0, 1);
-        }
-    </script>
-    <!--// Meta tag Keywords -->
-    <!-- Custom-Files -->
-    <link rel="stylesheet" href="~/Content/Front_End/css/bootstrap.css">
-    <!-- Bootstrap-Core-CSS -->
-    <link href="~/Content/Front_End/css/css_slider.css" type="text/css" rel="stylesheet" media="all">
-    <!-- Custom CSS Group 8-->
-    <link href="~/Content/Front_End/css/custom_css.css" rel="stylesheet" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="~/Content/img/favicon.ico" type="image/x-icon">
+
     <!-- Font awesome -->
-    <link href="~/Content/Front_End/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/css/font-awesome.css" rel="stylesheet" />
 
+    <!-- Bootstrap -->
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
 
     <!-- Slick slider -->
-    <link rel="stylesheet" type="text/css" href="~/Content/Front_End/css/slick.css">
-    <!-- banner slider -->
-    <link rel="stylesheet" href="~/Content/Front_End/css/style.css" type="text/css" media="all" />
-    <!-- Style-CSS -->
-    <link href="~/Content/Front_End/css/font-awesome.min.css" rel="stylesheet">
-    <!-- Font-Awesome-Icons-CSS -->
-    <!-- //Custom-Files -->
-    <!-- Web-Fonts -->
-    <link href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&amp;subset=latin-ext"
-          rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=latin-ext"
-          rel="stylesheet">
-    <!-- //Web-Fonts -->
+    <link rel="stylesheet" type="text/css" href="~/Content/css/slick.css">
+
+    <!-- Fancybox slider -->
+    <link rel="stylesheet" href="~/Content/css/jquery.fancybox.css" type="text/css" media="screen" />
+    <!-- Theme color -->
+    <link id="switcher" href="~/Content/css/theme-color/default-theme.css" rel="stylesheet">
+
+    <!-- Main style sheet -->
+    <link href="~/Content/css/style.css" rel="stylesheet">
+    <!-- Custom CSS Group 8-->
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,300,300italic,500,700' rel='stylesheet' type='text/css'>
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
 <body>
-    <!--Sticky Left-->
-    <ul class="sticky-left">
-        <li><a href="#"><i class="fa fa-search fa-3x"></i></a></li>
-        <li><a href="https://www.facebook.com/groups/719130598221169/"><i class="fa fa-facebook fa-3x fa-fb"></i></a></li>
-        <li><a href="mailto:quocthai0099@gmail.com?cc=Hi-We-Want-To-Contact-To-You&bcc=Form-Me&subject=big-new&body=Have-a-nice-day "><i class="fa fa-envelope fa-3x"></i></a></li>
-    </ul>
-    <!-- //Sticky Left-->
-    <!-- navigation -->
-    <div class="main-top">
-        <div class="d-lg-flex menu-top">
-            <!-- logo -->
-            <h1 class="logo-style-res float-left">
-                <a class="navbar-brand" href="@Url.Action("Index","Home")">
-                    <img src="~/Content/Front_End/my_images/logo_DLU.png" alt="" class="img-fluid logo-img" style="height:93px">
-                </a>
-            </h1>
-            <!-- //logo -->
-            <!-- nav -->
-            <div class="nav_w3ls mx-lg-auto">
-                <nav>
-                    <label for="drop" class="toggle" style="background-color:forestgreen;color:white;font-weight:bold"><i class="fa fa-bars" aria-hidden="true"></i></label>
-                    <input type="checkbox" id="drop" />
-                    <ul class="menu mx-lg-auto">
-                        <li><a id="Index1" href="@Url.Content("~/Home/Index")">Trang chủ</a></li>
-                        <li><a id="Introduce1" href="@Url.Action("Introduce","Home")">Giới thiệu</a></li>
-                        <li><a id="Professiors1" href="@Url.Action("Professiors","Home")">Giảng viên</a></li>
-                        <li>
-                            <!-- First Tier Drop Down -->
-                            <label for="drop-2" class="toggle toogle-2">
-                                Pages <span class="fa fa-angle-down" aria-hidden="true" style="background-color:forestgreen"></span>
-                            </label>
-                            <a id="Course1" href="@Url.Action("Course","Home")">Khóa học <span class="fa fa-angle-down" aria-hidden="true"></span></a>
-                            <input type="checkbox" id="drop-2" />
-                            <ul @*style="background-color:#228b22c9"*@>
-                                <li><a href="#professors" class="drop-text">JavaScipt</a></li>
-                                <li><a href="#blog" class="drop-text">CSharp</a></li>
-                                <li><a href="#who" class="drop-text">HTML</a></li>
-                                <li><a href="#testi" class="drop-text">React</a></li>
-                            </ul>
-                        </li>
-                        <li><a id="Gallery1" href="@Url.Action("Gallery","Home")">Ảnh</a></li>
-                        <li><a id="Contact1" href="@Url.Action("Contact","Home")">Liên hệ</a></li>
-                        <li class="dn"><a href="@Url.Action("Index","Login")">Đăng nhập</a></li>
-                        <li class="dk"><a href="@Url.Action("Register","Login")">Đăng ký</a></li>
 
-                    </ul>
-                </nav>
+    <!-- Start header  -->
+    <header id="mu-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="mu-header-area">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <div class="mu-header-top-left">
+                                    <div class="mu-top-email">
+                                        <i class="fa fa-envelope"></i>
+                                        <span>thanhha.it.1905@gmail.com</span>
+                                    </div>
+                                    <div class="mu-top-phone">
+                                        <i class="fa fa-phone"></i>
+                                        <span>(035) 999 9999</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <div class="mu-header-top-right">
+                                    <nav>
+                                        <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                                            @if (User.Identity.IsAuthenticated)
+                                            {
+                                                <span class="user-info">
+                                                    <b>Chào, </b>
+                                                    <span>@User.Identity.Name</span>
+                                                </span>
+                                            }
+                                            <i class="ace-icon fa fa-caret-down"></i>
+                                        </a>
+                                        @if (User.Identity.IsAuthenticated)
+                                        {
+                                    <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+
+                                        @if (Session["IDChucVu"].ToString() != "3")
+                                        {
+                                            <li>
+                                                <a href="@Url.Action("Index", "Home", new { area = "Admin" })">
+                                                    <i class="ace-icon fa fa-cog"></i>
+                                                    AdminPage
+                                                </a>
+                                            </li>
+                                        }
+
+
+
+
+
+                                        <li>
+                                            <a href="@Url.Action("Index","Info")">
+                                                <i class="ace-icon fa fa-user"></i>
+                                                Profile
+                                            </a>
+                                        </li>
+
+                                        <li class="divider"></li>
+
+                                        <li>
+                                            <a href="@Url.Content("~/Login/Logout")">
+                                                <i class="ace-icon fa fa-power-off"></i>
+                                                Logout
+                                            </a>
+                                        </li>
+                                    </ul>
+                                        }
+                                        else
+                                        {
+                                            <ul class="mu-top-social-nav">
+                                                <li>
+                                                    <a href="@Url.Action("Index", "Login")" style="color:black;background-color:transparent;outline:none" class="btn btn-success">
+                                                        <span class="fa fa-user-o"> ĐĂNG NHẬP</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="@Url.Action("Register", "Login")" style="color:black;background-color:transparent" class="btn btn-success">
+                                                        <span class="fa fa-openid"> ĐĂNG KÝ</span>
+                                                    </a>
+                                                </li>
+
+                                            </ul>
+                                        }
+
+
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- //nav -->
-            <!-- dwn -->
-            <div class="text-center area-btn" style="padding:25px 0;">
-                <a href="@Url.Action("Index","Login")" class="btn btn-success text-wh mt-lg-0 mt-2">
-                    <span class="fa fa-user-o text-wh mr-2"></span>Đăng nhập
-                </a>
-                <a href="@Url.Action("Register","Login")" class="btn btn-danger text-wh mt-lg-0 mt-2">
-                    <span class="fa fa-openid text-wh mr-2"></span>Đăng ký
-                </a>
+        </div>
+    </header>
+    <!-- End header  -->
+    <!-- Start search box -->
+    <div id="mu-search">
+        <div class="mu-search-area">
+            <button class="mu-search-close"><span class="fa fa-close"></span></button>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <form class="mu-search-form">
+                            <input type="search" placeholder="Nhập từ khóa">
+                        </form>
+                    </div>
+                </div>
             </div>
-            <!-- //dwn -->
         </div>
     </div>
-    <!-- //navigation -->
-    <!-- //header 2 -->
-    <!--Short nav-->
-    <div class="short-menu">
-        <div class="container d-lg-flex">
-            <!-- logo -->
-            <a href="index.html" style="margin-top:0.3rem;margin-left:7%">
-                <img src="~/Content/Front_End/my_images/logo_DLU1.png" alt="" class="img-fluid logo-img" style="height:30px">
-            </a>
-            <!-- //logo -->
-            <!-- nav -->
-            <div class="nav_w3ls mx-lg-auto short-ul">
-                <nav>
-                    <label for="drop" class="toggle" style="background-color:forestgreen;color:white;font-weight:bold"><i class="fa fa-bars" aria-hidden="true"></i></label>
-                    <input type="checkbox" id="drop" />
-                    <ul class="menu mx-lg-auto">
-                        <li><a id="Index" href="@Url.Content("~/Home/Index")">Trang chủ</a></li>
-                        <li><a id="Introduce" href="@Url.Action("Introduce","Home")">Giới thiệu</a></li>
-                        <li><a id="Professiors" href="@Url.Action("Professiors","Home")">Giảng viên</a></li>
-                        <li>
-                            <!-- First Tier Drop Down -->
-                            <label for="drop-2" class="toggle toogle-2">
-                                Pages <span class="fa fa-angle-down" aria-hidden="true"></span>
-                            </label>
-                            <a id="Course" href="@Url.Action("Course","Home")">Khóa học <span class="fa fa-angle-down" aria-hidden="true"></span></a>
-                            <input type="checkbox" id="drop-2" />
-                            <ul @*style="background-color:#228b22c9"*@>
-                                <li><a href="#professors" class="drop-text">JavaScipt</a></li>
-                                <li><a href="#blog" class="drop-text">CSharp</a></li>
-                                <li><a href="#who" class="drop-text">HTML</a></li>
-                                <li><a href="#testi" class="drop-text">React</a></li>
-
-                            </ul>
-                        </li>
-                        <li><a id="Gallery" href="@Url.Action("Gallery","Home")">Ảnh</a></li>
-                        <li><a id="Contact" href="@Url.Action("Contact","Home")">Liên hệ</a></li>
-                        <li class="dn"><a href="@Url.Action("Index","Login")">Đăng nhập</a></li>
-                        <li class="dk"><a href="@Url.Action("Register","Login")">Đăng ký</a></li>
+    <!-- End search box -->
+    <!-- Start menu -->
+    <section id="mu-menu">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- LOGO -->
+                    <!-- TEXT BASED LOGO -->
+                    <a class="navbar-brand" href="@Url.Action("Index","Home")"><i class="fa fa-university"></i><span>DALAT UNIVERSITY</span></a>
+                    <!-- IMG BASED LOGO  -->
+                    <!-- <a class="navbar-brand" href="@Url.Action("Index","Home")"><img src="" alt="logo"></a> -->
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
+                        <li id="Index1"><a id="Index" href="@Url.Action("Index","Home")">TRANG CHỦ</a></li>
+                        <li id="Course1"><a id="Course" href="@Url.Action("Course","Home")">KHÓA HỌC</a></li>
+                        <li id="Gallery1"><a id="Gallery" href="@Url.Action("Gallery","Home")">ẢNH</a></li>
+                        <li id="Gallery1"><a id="Gallery" href="@Url.Action("Professiors","Home")">GIẢNG VIÊN</a></li>
+                        <li id="Contact1"><a id="Contact" href="@Url.Action("Contact","Home")">LIÊN HỆ</a></li>
+                        @*<li><a href="404.html">404 Page</a></li>*@
+                        <li><a href="#" id="mu-search-icon"><i class="fa fa-search"></i></a></li>
                     </ul>
-                </nav>
+                </div><!--/.nav-collapse -->
             </div>
-            <!-- //nav -->
-            <!-- dwn -->
-            <div class="text-center area-btn" style="padding:0;">
-                <a href="@Url.Action("Index","Login")" style="color:white;background-color:transparent;outline:none" class="btn btn-success">
-                    <span class="fa fa-user-o"></span>
-                </a>
-                <a href="@Url.Action("Register","Login")" style="color:white;background-color:transparent" class="btn btn-success">
-                    <span class="fa fa-openid"></span>
-                </a>
-            </div>
-            <!-- //dwn -->
-        </div>
-    </div>
+        </nav>
+    </section>
+    <!-- End menu -->
     <!-- Body -->
     @RenderBody()
     <!-- //Body-->
-    <!-- // Short nav-->
-    <!-- banner -->
-    @RenderSection("NivoSlider", false)
-    <!-- //banner -->
-    <!-- banner bottom grids -->
-    @RenderSection("bottom_grids", false)
-
-    <!-- //banner bottom grids -->
-    <!-- Course -->
-    @RenderSection("course", false)
+    <!-- Slider -->
+    @RenderSection("Slider", false)
+    <!-- // Slider -->
+    <!-- Start service  -->
+    @RenderSection("Service", false)
+    <!-- End service  -->
+    <!-- Start about us -->
+    @RenderSection("About", false)
+    <!-- End about us -->
+    <!-- Start about us counter -->
+    @RenderSection("Counter", false)
+    <!-- End about us counter -->
+    <!-- Start features section -->
+    @RenderSection("Features", false)
+    <!-- End features section -->
+    @RenderSection("Course", false)
+    @RenderSection("Teacher", false)
+    @RenderSection("Contact", false)
+    @RenderSection("Gallery", false)
+    @RenderSection("AllCourse", false)
     @RenderSection("Coursedetail", false)
-    <!-- //Course -->
-    <!-- about -->
-    @RenderSection("about", false)
-
-    <!-- //about -->
-    <!-- gallery -->
-    @RenderSection("gallery", false)
-
-    <!-- //gallery -->
-    <!-- professors -->
     @RenderSection("professiors", false)
 
     <!-- //professors -->
@@ -188,254 +221,123 @@
     @RenderSection("who", false)
 
     <!-- //who we are -->
-    <!-- testimonials -->
-    @*@RenderSection("quote",false)
-        <section class="clients" id="testi">
-            <div class="row no-gutters pb-4">
-                <div class="col-lg-6 col-md-8 left-test-w3pvt p-sm-5 p-4">
-                    <div class="my-4 py-xl-5 py-lg-3">
-                        <div class="feedback-info">
-                            <div class="feedback-top">
-                                <span class="text-white">
-                                    - Ăn ngủ và lăn ra code<br />
-                                    - Code chán thì đi đá banh <br />
-                                    - Đá banh chán thì qua phòng gái <br />
-                                </span>
-                                <h4 class="mt-4 text-wh font-weight-bold mb-4">Văn lành</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-4"></div>
-            </div>
-        </section>*@
-    <!-- //testimonials -->
-    <!-- contact -->
-    @RenderSection("contact", false)
-    <hr />
+    <!-- Start footer -->
+    <footer id="mu-footer" style="padding-top:3%">
+        <!-- start footer top -->
+        <div class="mu-footer-top">
+            <div class="container">
+                <div class="mu-footer-top-area">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-3">
+                            <div class="mu-footer-widget">
+                                <h4>Trang Chủ</h4>
+                                <ul>
+                                    <li><a href="@Url.Action("Index","Home")">Trang chủ</a></li>
+                                    <li><a href="@Url.Action("Course","Home")">Khóa học</a></li>
+                                    <li><a href="@Url.Action("Gallery","Home")">Ảnh</a></li>
+                                    <li><a href="@Url.Action("Index","Home")">Giới thiệu</a></li>
+                                    <li><a href="@Url.Action("Contact","Home")">Liên hệ</a></li>
 
-    <!-- //contact -->
-    <!-- brands -->
-    @RenderSection("brands", false)
-    <section class="brands pt-5">
-        <div class="container-fluid">
-            <div class="row text-center">
-                <div class="col-md-2 col-4 main-brand bg-transparent">
-                    <a href="#"><img src="~/Content/Front_End/my_images/js-logo.png" class="img-fluid logo-img" alt="" /></a>
-                </div>
-                <div class="col-md-2 col-4 main-brand bg-transparent">
-                    @*<span class="fa fa-gg mb-3" aria-hidden="true"></span>*@
-                    <img src="~/Content/Front_End/my_images/csharp-logo.png" class="img-fluid logo-img" alt="" />
-                </div>
-                <div class="col-md-2 col-4 main-brand bg-transparent">
-                    @*<span class="fa fa-lastfm mb-3" aria-hidden="true"></span>*@
-                    <img src="~/Content/Front_End/my_images/html-logo.png" class="img-fluid logo-img" alt="" />
-                </div>
-                <div class="col-md-2 col-4 main-brand bg-transparent">
-                    <img src="~/Content/Front_End/my_images/bootstrap-logo.png" class="img-fluid logo-img" alt="" />
-                </div>
-                <div class="col-md-2 col-4 main-brand bg-transparent">
-                    <img src="~/Content/Front_End/my_images/react-logo.png" class="img-fluid logo-img" alt="" />
-                </div>
-                <div class="col-md-2 col-4 main-brand bg-transparent">
-                    <img src="~/Content/Front_End/my_images/nodejs-logo.png" class="img-fluid logo-img" alt="" />
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- //brands -->
-    <!-- footer -->
-    <footer class="bg-colors py-5">
-        <div class="container py-xl-4">
-            <div class="row footer-grids">
-                <div class="col-lg-2 col-sm-4 footer-grid">
-                    <h3 class="mb-sm-4 mb-3 pb-lg-3">Trang Chủ</h3>
-                    <ul class="list-unstyled">
-                        <li>
-                            <a href="@Url.Content("~/Home/Index")">Trang chủ</a>
-                        </li>
-                        <li class="my-2">
-                            <a class="scroll" href="">Giới thiệu</a>
-                        </li>
-                        <li>
-                            <a class="scroll" href="#services">Khóa học</a>
-                        </li>
-                        <li class="my-2">
-                            <a class="scroll" href="#gallery">Ảnh</a>
-                        </li>
-                        <li>
-                            <a class="scroll" href="#contact">Liên hệ</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-2 col-sm-4 footer-grid mt-sm-0 mt-4">
-                    <h3 class="mb-sm-4 mb-3 pb-lg-3"> Liên kết</h3>
-                    <ul class="list-unstyled">
-                        <li>
-                            <a class="scroll" href="#who">Chúng tôi là ai</a>
-                        </li>
-                        <li class="my-2">
-                            <a class="scroll" href="#blog">Khóa học mới nhất</a>
-                        </li>
-                        <li>
-                            <a class="scroll" href="#professors">Chuyên gia</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-2 col-sm-4 footer-grid mt-sm-0 mt-4">
-                    <h3 class="mb-sm-4 mb-3 pb-lg-3">Yêu thích</h3>
-                    <ul class="list-unstyled">
-                        <li>
-                            <a class="scroll" href="#who">Chơi game</a>
-                        </li>
-                        <li class="my-2">
-                            <a class="scroll" href="#blog">Phá team</a>
-                        </li>
-                        <li>
-                            <a class="scroll" href="#professors">Gánh đội bạn</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-4 col-sm-6 footer-grid mt-lg-0 mt-4">
-                    <div class="address">
-                        <div class="row address-grid">
-                            <div class="col-md-3 col-sm-4 col-2 address-left text-center">
-                                <i class="fa fa-phone"></i>
-                            </div>
-                            <div class="col-md-9 col-sm-8 col-10 address-right">
-                                <p>(+84)12345602197</p>
+
+                                </ul>
                             </div>
                         </div>
-                        <div class="row address-grid my-3">
-                            <div class="col-md-3 col-sm-4 col-2 address-left text-center">
-                                <i class="fa fa-envelope"></i>
-                            </div>
-                            <div class="col-md-9 col-sm-8 col-10 address-right">
-                                <p>
-                                    <a href="mailto:quocthai0099@gmail.com"> quocthai0099@gmail.com</a>
-                                </p>
-                                <p>
-                                    <a href="mailto:rinhnguyen535@gmail.com"> rinhnguyen@gmail.com</a>
-                                </p>
-                                <p>
-                                    <a href="mailto:thanhha.it.1905@gmail.com"> thanhha.it.1905@gmail.com</a>
-                                </p>
+                        <div class="col-lg-3 col-md-3 col-sm-3">
+                            <div class="mu-footer-widget">
+                                <h4>Liên Kết</h4>
+                                <ul>
+                                    <li><a href="">Chúng tôi là ai</a></li>
+                                    <li><a href="#">Khóa học mới nhất</a></li>
+                                    <li><a href="">Chuyên gia</a></li>
+
+                                </ul>
                             </div>
                         </div>
-                        <div class="row address-grid">
-                            <div class="col-md-3 col-sm-4 col-2 address-left text-center">
-                                <i class="fa fa-map"></i>
+                        <div class="col-lg-3 col-md-3 col-sm-3">
+                            <div class="mu-footer-widget">
+                                <h4>Yêu thích</h4>
+                                <ul>
+                                    <li><a>Chơi Game </a> </li>
+                                    @*<form class="mu-subscribe-form">
+                                        <input type="email" placeholder="Type your Email">
+                                        <button class="mu-subscribe-btn" type="submit">Subscribe!</button>
+                                         </form>*@
+                                    <li> <a>Phá team  </a></li>
+                                    <li> <a>Gánh đội bạn </a> </li>
+                                </ul>
+
                             </div>
-                            <div class="col-md-9 col-sm-8 col-10 address-right">
-                                <p> Số 1, Phù Đổng Thiên Vương, Phường 8 <br> Đà Lạt, Việt Nam </p>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3">
+                            <div class="mu-footer-widget">
+                                <h4>Liên hệ</h4>
+                                <address>
+                                    <p>
+                                        Số 1, Phù Đổng Thiên Vương, Phường 8
+                                        Đà Lạt, Việt Nam
+                                    </p>
+                                    <p>Điện Thoại: (+84)359999999</p>
+                                    <ul>
+                                        <li>
+                                            <p>Email: thanhha.it.1905@gmail.com</p>
+                                        </li>
+                                        <li>
+                                            <p>quocthai0099@gmail.com</p>
+                                        </li>
+                                    </ul>
+
+                                </address>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2 col-sm-6 footer-grid footer-contact mt-lg-0 mt-4">
-                    <h3 class="mb-sm-4 mb-3 pb-lg-3"> Liên hệ</h3>
-                    <ul class="list-unstyled">
-                        <li>
-                            (+84)3499997622
-                        </li>
-                        <li class="mt-2">
-                            <a href="mailto:info@example.com">nhom8_ctk39@gmail.com</a>
-                        </li>
-                    </ul>
+            </div>
+        </div>
+        <!-- end footer top -->
+        <!-- start footer bottom -->
+        <div class="mu-footer-bottom">
+            <div class="container">
+                <div class="mu-footer-bottom-area">
+                    <p>&copy; 2019 Studies. All Right Reserved. Designed by <a href="" rel="nofollow">Nhom08_CTK39</a></p>
                 </div>
             </div>
         </div>
+        <!-- end footer bottom -->
     </footer>
-    <!-- //footer -->
-    <!-- copyright -->
-    <div class="copyright-w3ls py-4">
-        <div class="container">
-            <div class="row">
-                <!-- copyright -->
-                <p class="col-lg-8 copy-right-grids text-bl text-lg-left text-center mt-lg-2">
-                    © 2019 Studies. All
-                    Rights Reserved | Design by
-                    <a href="https://github.com/Beggar-k39/Nhom8_CTK39" target="_blank" class="text-colors">Nhom8_CTK39</a>
-                </p>
-                <!-- //copyright -->
-                <!-- social icons -->
-                <div class="col-lg-4 w3social-icons text-lg-right text-center mt-lg-0 mt-3">
-                    <ul>
-                        <li>
-                            <a href="https://www.facebook.com/groups/719130598221169/" target="_blank" class="rounded-circle">
-                                <span class="fa fa-facebook-f"></span>
-                            </a>
-                        </li>
-                        <li class="px-2">
-                            <a href="#" class="rounded-circle">
-                                <span class="fa fa-google-plus"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="rounded-circle">
-                                <span class="fa fa-twitter"></span>
-                            </a>
-                        </li>
-                        <li class="pl-2">
-                            <a href="#" class="rounded-circle">
-                                <span class="fa fa-dribbble"></span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- //social icons -->
-            </div>
-        </div>
-        <!-- //copyright -->
-        <!-- move top icon -->
-        <a href="#" class="move-top text-center"></a>
-        <!-- //move top icon -->
-    </div>
-    <!--Script Custom Group 8-->
-    <script src="~/Content/Front_End/js/custom_js.js"></script>
-    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
-    <link href="~/Content/nivo-slider/nivo-slider.css" rel="stylesheet" />
-    <script src="~/Content/nivo-slider/jquery.nivo.slider.pack.js"></script>
-
-
-    <!--jQuery library -->
+    <!-- End footer -->
+    <!-- jQuery library -->
     <script src="~/Content/js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="~/Content/js/bootstrap.js"></script>
     <!-- Slick slider -->
-    <script type="text/javascript" src="~/Content/Front_End/js/slick.js"></script>
+    <script type="text/javascript" src="~/Content/js/slick.js"></script>
     <!-- Counter -->
-    <script type="text/javascript" src="~/Content/Front_End/js/waypoints.js"></script>
-    <script type="text/javascript" src="~/Content/Front_End/js/jquery.counterup.js"></script>
+    <script type="text/javascript" src="~/Content/js/waypoints.js"></script>
+    <script type="text/javascript" src="~/Content/js/jquery.counterup.js"></script>
     <!-- Mixit slider -->
-    <script type="text/javascript" src="~/Content/Front_End/js/jquery.mixitup.js"></script>
+    <script type="text/javascript" src="~/Content/js/jquery.mixitup.js"></script>
     <!-- Add fancyBox -->
-    <script type="text/javascript" src="~/Content/Front_End/js/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="~/Content/js/jquery.fancybox.pack.js"></script>
 
 
     <!-- Custom js -->
-    <script src="~/Content/Front_End/js/custom.js"></script>
+    <script src="~/Content/js/custom.js"></script>
+
+
     <script type="text/javascript">
         $(window).on('load', function () {
-            $('#slider').nivoSlider(
-                {
-                    controlNav: false,
-                    directionNav: false,
-                    pauseTime: 3000,
-                    pauseOnHover: false,
-                });
-
             //alert($('#title').text());
             // Active Menu
             var x = $('#title').text();
             var str = "#" + x;
             var str1 = str + "1";
-            $(str).addClass('text-wh');
-            $(str1).addClass('text-wh');
+            $(str).addClass('active');
+            $(str1).addClass('active');
             // End Active Menu
         });
+
     </script>
+
     @RenderSection("script", required: false)
-    <!-- // End Script Custom Group 8-->
 </body>
 </html>

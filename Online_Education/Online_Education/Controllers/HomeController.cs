@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Online_Education.ChucNang;
+using PagedList;
+using PagedList.Mvc;
 
 namespace Online_Education.Controllers
 {
@@ -10,7 +13,8 @@ namespace Online_Education.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var model = new TinTucD().ListAll();
+            return PartialView(model);
         }
         public ActionResult Introduce()
         {
@@ -26,11 +30,16 @@ namespace Online_Education.Controllers
         }
         public ActionResult Professiors()
         {
-            return View();
+            var model = new GiangVienD().ListAll();
+            return PartialView(model);
         }
-        public ActionResult Course()
+        public PartialViewResult Course(int? page)
         {
-            return View();
+
+            int pageSize = 6;
+            int pageNumber = (page ?? 1);
+            var model = new KhoaHocD().ListAll();
+            return PartialView(model.ToPagedList(pageNumber, pageSize));
         }
         public ActionResult Login()
         {
@@ -40,6 +49,15 @@ namespace Online_Education.Controllers
         {
             return View();
         }
+
+        public PartialViewResult SideBar()
+        {
+
+
+            var model = new LoaiKhoaHocD().ListAll();
+            return PartialView(model);
+        }
+
 
     }
 }
